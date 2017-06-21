@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_isactive
+    - node.type.referrals
+id: node.referrals.field_isactive
+field_name: field_isactive
+entity_type: node
+bundle: referrals
+label: IsActive
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: In-Active
+field_type: boolean

@@ -1,0 +1,259 @@
+<?php
+
+/**
+ * @file
+ * Globant Referral for customization.
+ *
+ */
+use Drupal\node\NodeInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_help().
+ */
+function globant_referral_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.globant_referral':
+      return '<p>' . t('Globant Referral for customization') . '</p>';;
+    case 'globant_referral.overview':
+      return '<p>' . t('Globant Referral for customization') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ * This will generate job id.
+ *
+ */
+function globant_referral_node_insert(NodeInterface $node) {
+  if ($node->getType() === 'job_post') {
+    $job_id = _globant_referral_get_job_id($node);
+    $node->set('field_jp_job_id', $job_id);
+    $node->setNewRevision(FALSE);
+    $node->save();
+  }
+  /*  if ($node->getType() === 'referrals') {
+      // Send mail to user
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $module = 'globant_referral';
+      $key = 'referral';
+      $from = \Drupal::config('system.site')->get('mail');
+      $to = \Drupal::currentUser()->getEmail();
+      // theme mail body
+      $theme_body = ['#theme' => 'referral-mail-body','#text' => 'Body of mail goes here……..'];
+      $mail_body = drupal_render($theme_body);
+      $params['headers'] = array(
+        'content-type' => 'text/html',
+        'MIME-Version' => '1.0',
+        'reply-to' => $from,
+        'from' => 'sender name <'.$from.'>'
+      );
+      $params['message'] = $mail_body;
+      $params['subject'] = $entity->label();
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $send = true;
+      $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+      if ($result['result'] !== true) {
+        drupal_set_message(t('There was a problem sending your message and it was not sent.'), 'error');
+      }
+      else {
+        drupal_set_message(t('Your message has been sent.'));
+      }
+    }*/
+}
+
+// Add Job ID generation logic here
+function _globant_referral_get_job_id($node){
+
+  $tids = [];
+  $code = [];
+  $location_tid = $node->get('field_jp_location')->getValue();
+  foreach ($location_tid as $tid) {
+    $tids[] = $tid['target_id'];
+  }
+
+  $location_terms = taxonomy_term_load_multiple($tids);
+  foreach ($location_terms as $term) {
+    $country_code = $term->get('field_country_code')->value;
+    if (!in_array($country_code, $code)) {
+      $code[] = $country_code;
+    }
+  }
+
+  $code_prefix = (count($code) > 1)? 'MULTI' :  $code[0];
+  $job_id_prefix = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('job_id_prefix');
+  $job_id = $job_id_prefix . $code_prefix . $node->id();
+
+  return $job_id;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ *
+ */
+function globant_referral_form_alter(&$form, FormStateInterface $form_state, $form_id){
+
+   switch ($form_id) {
+    case 'views_exposed_form':
+
+      if ($form['#id'] == 'views-exposed-form-my-referrals-block-all-referrals') {
+        $options = _globant_referral_get_user();
+        $form['field_assigned_to_target_id']['#type'] = "select";
+        $form['field_assigned_to_target_id']['#size'] = null;
+        $form['field_assigned_to_target_id']['#default_value'] = '';
+        $form['field_assigned_to_target_id']['#options'] = $options;
+      }
+    break;
+
+    case 'node_referrals_form':
+    case 'node_referrals_edit_form':
+
+      $user_roles = \Drupal::currentUser()->getRoles();
+      $form['field_candidate_status']['#access'] = FALSE;
+      $form['field_isactive']['#access'] = FALSE;
+      $form['field_referred_by']['#access'] = FALSE;
+      $form['field_assigned_to']['#access'] = FALSE;
+      $form['field_candidate_email']['#disabled'] = TRUE;
+      if ($form_id == 'node_referrals_form') {
+        $user_id = \Drupal::currentUser()->id();
+        $form['field_referred_by']['widget']['#default_value'] = $user_id;
+        $form['field_candidate_email']['#disabled'] = FALSE;
+      }
+      $roles = ['recruiter_admin', 'recruiter', 'administrator'];
+
+      if (array_intersect($roles, $user_roles)) {
+        $form['field_candidate_status']['#access'] = TRUE;
+        $form['field_isactive']['#access'] = TRUE;
+        $form['field_assigned_to']['#access'] = TRUE;
+        $form['field_referred_by']['#access'] = TRUE;
+        $form['field_referred_by']['#disabled'] = TRUE;
+        if (in_array('recruiter_admin', $user_roles)) {
+          $form['field_referred_by']['#disabled'] = FALSE;
+          $form['field_candidate_email']['#disabled'] = FALSE;
+        }
+      }
+      $form['#validate'][] = 'globant_referral_referrals_validate';
+    break;
+  }
+}
+
+function globant_referral_referrals_validate(&$form, FormStateInterface $form_state) {
+  $node_obj = $form_state->getFormObject()->getEntity();
+  $node_obj = $node_obj->id();
+  $is_new_node = isset($node_obj)? TRUE : FALSE;
+  $email_id = $form_state->getValue('field_candidate_email')[0]['value'];
+  $roles = ['recruiter_admin', 'recruiter', 'administrator' ];
+  $user_roles = \Drupal::currentUser()->getRoles();
+
+  if ($email_id && !(array_intersect($roles, $user_roles) && $is_new_node)) {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'referrals')
+      ->condition('status', 1)
+      ->condition('field_candidate_email', $email_id)
+      ->condition('field_isactive', 1)
+      ->execute();
+
+    if (!empty($nids)) {
+      $months = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('before_month');
+
+      $node_id = array_shift($nids);
+      $node = node_load($node_id);
+
+      $date_created = date('d-m-Y', $node->getCreatedTime());
+      $start_date = new DateTime($date_created);
+      $end_date = new DateTime();
+      $interval = $end_date->diff($start_date);
+
+      if ($interval->m >= $months || $interval->y > 1) {
+        // set in active and add new with active
+        $node->set('field_isactive', 0);
+        $node->save();
+      }
+      else {
+        $error_message = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('error_message');
+        $form_state->setErrorByName('field_candidate_email', t('@message', array('@message' => $error_message)));
+      }
+    }
+  }
+}
+
+/**
+ * Get user by roles array.
+ */
+function _globant_referral_get_user($roles = ['recruiter']){
+  $options[''] = '- Any -';
+  $uid = \Drupal::currentUser()->id();
+  $ids = \Drupal::entityQuery('user')
+    ->condition('status', 1)
+    ->condition('roles', $roles, 'IN')
+    ->execute();
+  $users = user_load_multiple(array_keys($ids));
+  foreach ($users as $user) {
+    $name = $user->getUsername();
+    if ($uid == $user->id()) {
+      $name = t('Me');
+    }
+    $options[$user->id()] = $name;
+  }
+  return $options;
+}
+
+
+function globant_referral_node_access(NodeInterface $node, $op, AccountInterface $account) {
+
+  $type = $node->bundle();
+  // Add permission for only Not proccesed and not assinged
+  if ($op == 'update' && $type == 'referrals') {
+    $roles = $account->getRoles();
+    $referral_status = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('referral_status');
+    $tid = $node->get('field_candidate_status')->getValue()[0]['target_id'];
+    $assigned_to = $node->get('field_assigned_to')->getValue();
+    // recruiter_admin can change anything
+    if  (in_array('recruiter_admin', $roles)) {
+      return AccessResult::allowed();
+    }
+    // assinged to recruiter(itself) can change status.
+    if (!empty($assigned_to) && $assigned_to[0]['target_id'] == $account->id()) {
+      return AccessResult::allowed();
+    }
+    // Not assinged to any one can change by anyone
+    if (in_array('recruiter', $roles) && $tid == $referral_status
+      && empty($assigned_to)) {
+      return AccessResult::allowed();
+    }
+    return AccessResult::forbidden();
+  }
+}
+
+
+/**
+* Implements hook_mail().
+*/
+function globant_referral_mail($key, &$message, $params) {
+  $options = ['langcode' => $message['langcode']];
+  switch ($key) {
+    case 'referral':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Referral created: @subject', array('@subject' => $params['subject']), $options);
+      $message['body'][] = $params['message'];
+    break;
+  }
+}
+
+/*
+* hook_theme()
+*/
+function globant_referral_theme(){
+  return ['referral-mail-body' =>
+    ['variables' =>
+      ['text' => NULL,]
+    ,]
+  ];
+}

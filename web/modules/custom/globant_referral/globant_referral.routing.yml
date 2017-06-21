@@ -1,0 +1,9 @@
+globant_referral.condition.manipulation:
+  path: '/admin/config/referral/condition-manipulation'
+  defaults:
+    _form: '\Drupal\globant_referral\Form\ConditionConfigForm'
+    _title: 'Globant referral condition manipulation configuration'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+    - views.view.job_post
+  module:
+    - views
+id: home_page-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    529cfd95-4f72-4e99-b3ca-5ae533b39a19:
+      id: 'views_block:job_post-job_posts'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 529cfd95-4f72-4e99-b3ca-5ae533b39a19
+      context_mapping: {  }
+  id: block_display
+  uuid: 49ccb1bd-abd0-4d40-a13e-ac454e1e276b
+  label: null
+  weight: 0
+  page_title: 'Job listing'
+page: home_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

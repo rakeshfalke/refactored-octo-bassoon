@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_skype
+    - node.type.referrals
+id: node.referrals.field_candidate_skype
+field_name: field_candidate_skype
+entity_type: node
+bundle: referrals
+label: 'Candidate Skype'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

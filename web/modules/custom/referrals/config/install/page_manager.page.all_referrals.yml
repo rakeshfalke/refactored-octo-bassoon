@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: all_referrals
+label: 'All Referrals'
+description: 'All Referrals'
+use_admin_theme: false
+path: /view-referrals
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    roles:
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+parameters: {  }

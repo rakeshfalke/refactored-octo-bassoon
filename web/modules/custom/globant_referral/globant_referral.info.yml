@@ -1,0 +1,6 @@
+name: Globant Referral
+type: module
+description: 'Globant Referral for customization.'
+package: Globant Custom
+core: 8.x
+config: globant_referral.condition.manipulation

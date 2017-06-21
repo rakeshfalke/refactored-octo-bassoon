@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.referrals.body
+    - field.field.node.referrals.field_assigned_to
+    - field.field.node.referrals.field_candidate_cell
+    - field.field.node.referrals.field_candidate_email
+    - field.field.node.referrals.field_candidate_experience
+    - field.field.node.referrals.field_candidate_location
+    - field.field.node.referrals.field_candidate_resume
+    - field.field.node.referrals.field_candidate_skype
+    - field.field.node.referrals.field_candidate_status
+    - field.field.node.referrals.field_isactive
+    - field.field.node.referrals.field_referred_by
+    - node.type.referrals
+  module:
+    - file
+    - workbench_moderation
+id: node.referrals.default
+targetEntityType: node
+bundle: referrals
+mode: default
+content:
+  field_assigned_to:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_candidate_cell:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_candidate_email:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_candidate_experience:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_candidate_location:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_candidate_resume:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_candidate_skype:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_candidate_status:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_isactive:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_referred_by:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

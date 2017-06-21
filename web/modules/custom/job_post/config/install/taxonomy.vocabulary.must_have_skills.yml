@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Must Have Skills'
+vid: must_have_skills
+description: 'Must Have Skills'
+hierarchy: 0
+weight: 0

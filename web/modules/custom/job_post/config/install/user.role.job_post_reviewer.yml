@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: job_post_reviewer
+label: 'Job Post reviewer'
+weight: 8
+is_admin: null

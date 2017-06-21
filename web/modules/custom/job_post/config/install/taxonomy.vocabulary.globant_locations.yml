@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Locations
+vid: globant_locations
+description: 'Globant Locations'
+hierarchy: 0
+weight: 0

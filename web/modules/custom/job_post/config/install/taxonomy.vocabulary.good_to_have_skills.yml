@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Good to Have Skills'
+vid: good_to_have_skills
+description: 'Good to Have Skills'
+hierarchy: 0
+weight: 0

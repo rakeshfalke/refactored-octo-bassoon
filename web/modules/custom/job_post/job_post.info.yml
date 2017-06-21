@@ -1,0 +1,17 @@
+name: 'Job Post'
+description: 'Job Post Feature'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - field
+  - menu_ui
+  - node
+  - page_manager
+  - panelizer
+  - path
+  - taxonomy
+  - text
+  - user
+  - views
+  - workbench_moderation

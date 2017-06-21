@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_experience_max
+    - node.type.job_post
+id: node.job_post.field_jp_experience_max
+field_name: field_jp_experience_max
+entity_type: node
+bundle: job_post
+label: 'Experience Max'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

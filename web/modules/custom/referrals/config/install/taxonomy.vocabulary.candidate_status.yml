@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Candidate Status'
+vid: candidate_status
+description: ''
+hierarchy: 0
+weight: 0
