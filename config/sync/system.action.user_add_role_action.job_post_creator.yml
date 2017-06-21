@@ -1,0 +1,14 @@
+uuid: e6e19b82-b9ea-486a-8577-985bdff0aadd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.job_post_creator
+  module:
+    - user
+id: user_add_role_action.job_post_creator
+label: 'Add the Job Post creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: job_post_creator

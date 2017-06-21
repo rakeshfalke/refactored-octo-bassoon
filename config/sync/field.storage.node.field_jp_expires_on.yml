@@ -1,0 +1,20 @@
+uuid: a6a30c5b-a5f2-4cfd-8409-231b9c6feb09
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_jp_expires_on
+field_name: field_jp_expires_on
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

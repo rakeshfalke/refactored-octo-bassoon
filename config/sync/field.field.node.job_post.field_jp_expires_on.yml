@@ -1,0 +1,23 @@
+uuid: e4eaa4e1-8a73-4522-9324-f39c5b642768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_expires_on
+    - node.type.job_post
+  module:
+    - datetime
+_core:
+  default_config_hash: tu9rV1KHDLU1SAqJzEQv9GBwadG7psTxL4-9AUpSq1Y
+id: node.job_post.field_jp_expires_on
+field_name: field_jp_expires_on
+entity_type: node
+bundle: job_post
+label: 'Expires on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

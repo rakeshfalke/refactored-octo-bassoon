@@ -1,0 +1,22 @@
+uuid: 95a98347-b9a6-43da-8301-1c9b08002c2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - globant_referral_theme
+_core:
+  default_config_hash: wDR9JKEATSWldBjw8du8s3G2zjEYeQf88nlld11hMLo
+id: globant_referral_theme_breadcrumbs
+theme: globant_referral_theme
+region: header
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

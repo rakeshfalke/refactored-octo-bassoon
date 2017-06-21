@@ -1,0 +1,14 @@
+uuid: 572be7d9-35d0-4edb-93d7-aa8b25ba5302
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Job Post form display'
+id: node.job_post
+label: 'Job Post'
+targetEntityType: node
+cache: true

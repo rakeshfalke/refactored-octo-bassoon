@@ -1,0 +1,14 @@
+uuid: 6f302c37-6fa0-40d4-96b9-863475950e63
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: recruiter_admin
+label: 'Recruiter Admin'
+weight: 11
+is_admin: null
+permissions: {  }

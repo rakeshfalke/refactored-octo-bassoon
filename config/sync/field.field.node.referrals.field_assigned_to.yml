@@ -1,0 +1,46 @@
+uuid: 42e91364-1234-4585-a899-5dcd078e0c9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assigned_to
+    - node.type.referrals
+_core:
+  default_config_hash: fytTHUIUZeGzoa6hA6bVx5P1A2mLir-n8t9Hlxdr36c
+id: node.referrals.field_assigned_to
+field_name: field_assigned_to
+entity_type: node
+bundle: referrals
+label: 'Assigned To'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        recruiter_admin: recruiter_admin
+        recruiter: recruiter
+        administrator: '0'
+        page_creator: '0'
+        layout_manager: '0'
+        page_reviewer: '0'
+        landing_page_creator: '0'
+        landing_page_reviewer: '0'
+        media_creator: '0'
+        media_manager: '0'
+        job_post_creator: '0'
+        job_post_reviewer: '0'
+        referrals_creator: '0'
+        referrals_reviewer: '0'
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: aceccd89-bc81-4f7e-88dd-1c703cc8c27f
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 8Q-ii5NZ1Hf6zTJlEcANwHRa7f6Hen32jlh9NfCTlgA
+id: all_referrals
+label: 'All Referrals'
+description: 'All Referrals'
+use_admin_theme: false
+path: /view-referrals
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    roles:
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+parameters: {  }

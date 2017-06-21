@@ -1,0 +1,30 @@
+uuid: 7efb8972-ca46-4c0f-a9cf-447f1f0bd32a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referred_by
+    - node.type.referrals
+_core:
+  default_config_hash: JbnRbb7ufzHU7iFyB_GBOy2eEY-ychDS88s3ELNGAhc
+id: node.referrals.field_referred_by
+field_name: field_referred_by
+entity_type: node
+bundle: referrals
+label: 'Referred By'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

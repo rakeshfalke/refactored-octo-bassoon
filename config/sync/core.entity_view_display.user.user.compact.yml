@@ -1,0 +1,17 @@
+uuid: 3469eacc-4ecf-45a7-a951-38de446afa3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+  module:
+    - user
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  member_for:
+    weight: 5
+    region: content
+hidden: {  }

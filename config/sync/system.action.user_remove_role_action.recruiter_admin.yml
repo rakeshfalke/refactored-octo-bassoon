@@ -1,0 +1,14 @@
+uuid: 0da2c85d-440a-44af-97e9-d3bd57ac5058
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recruiter_admin
+  module:
+    - user
+id: user_remove_role_action.recruiter_admin
+label: 'Remove the Recruiter Admin role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: recruiter_admin

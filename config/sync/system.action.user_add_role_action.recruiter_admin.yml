@@ -1,0 +1,14 @@
+uuid: 0f94563e-bd09-4438-8d83-5f0e610d7325
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recruiter_admin
+  module:
+    - user
+id: user_add_role_action.recruiter_admin
+label: 'Add the Recruiter Admin role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: recruiter_admin

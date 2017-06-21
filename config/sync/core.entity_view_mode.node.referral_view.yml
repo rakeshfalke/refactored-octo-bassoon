@@ -1,0 +1,14 @@
+uuid: 2a2a8b59-ed94-4de1-8315-92ba5a4b709b
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.referral_view
+label: 'Referral view'
+targetEntityType: node
+cache: true

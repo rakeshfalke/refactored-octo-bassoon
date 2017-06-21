@@ -1,0 +1,49 @@
+uuid: 98bf0fb6-a1ce-4185-afc8-7da26426f0b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job_post.body
+    - field.field.node.job_post.field_jp_experience_max
+    - field.field.node.job_post.field_jp_experience_min
+    - field.field.node.job_post.field_jp_expires_on
+    - field.field.node.job_post.field_jp_good_to_have_skills
+    - field.field.node.job_post.field_jp_job_id
+    - field.field.node.job_post.field_jp_location
+    - field.field.node.job_post.field_jp_must_have_skills
+    - field.field.node.job_post.field_jp_special_notes
+    - node.type.job_post
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: BWvxVOega729mWmVvhejdEaPNpQVNfwQSyQ-OksXcgo
+id: node.job_post.teaser
+targetEntityType: node
+bundle: job_post
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_jp_experience_max: true
+  field_jp_experience_min: true
+  field_jp_expires_on: true
+  field_jp_good_to_have_skills: true
+  field_jp_job_id: true
+  field_jp_location: true
+  field_jp_must_have_skills: true
+  field_jp_special_notes: true

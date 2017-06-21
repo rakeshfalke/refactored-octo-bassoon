@@ -1,0 +1,17 @@
+role_to_select:
+  referrals_creator: referrals_creator
+  administrator: 0
+  page_creator: 0
+  layout_manager: 0
+  page_reviewer: 0
+  landing_page_creator: 0
+  landing_page_reviewer: 0
+  media_creator: 0
+  media_manager: 0
+  job_post_creator: 0
+  job_post_reviewer: 0
+  referrals_reviewer: 0
+  recruiter_admin: 0
+  recruiter: 0
+_core:
+  default_config_hash: t_8BAE6FT4QWQHV7U-LybyU4R_CpoYF8JQ_QsNPfUnA

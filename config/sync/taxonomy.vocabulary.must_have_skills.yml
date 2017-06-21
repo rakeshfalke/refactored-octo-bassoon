@@ -1,0 +1,11 @@
+uuid: c91be3b2-0732-412e-82fa-df533a071985
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-nKDY-z0JsdA30DD65XvdWc_sS4tb20rB22_micIJb0'
+name: 'Must Have Skills'
+vid: must_have_skills
+description: 'Must Have Skills'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,68 @@
+uuid: 77a4489b-b922-4952-b626-f9f28b9cc380
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+    - views.view.job_post
+    - views.view.my_referrals
+  module:
+    - user
+    - views
+_core:
+  default_config_hash: wxE-UwG03IzrPca1nk2VFA88iCQvsojBKFI03TMcwZ8
+id: home_page-block_display-0
+label: 'My Referral'
+variant: block_display
+variant_settings:
+  blocks:
+    529cfd95-4f72-4e99-b3ca-5ae533b39a19:
+      id: 'views_block:job_post-job_posts'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 529cfd95-4f72-4e99-b3ca-5ae533b39a19
+      context_mapping: {  }
+    4eb545f5-19a4-48ba-93f3-1b934bc8cb31:
+      id: 'views_block:my_referrals-block_my_referrals'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 4eb545f5-19a4-48ba-93f3-1b934bc8cb31
+      context_mapping: {  }
+    6ae8e680-318a-4053-a631-1b9987e5823d:
+      id: 'views_block:my_referrals-block_recruiter_referrals'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 6ae8e680-318a-4053-a631-1b9987e5823d
+      context_mapping: {  }
+  id: block_display
+  uuid: 49ccb1bd-abd0-4d40-a13e-ac454e1e276b
+  label: null
+  weight: 0
+  page_title: 'Job listing'
+page: home_page
+weight: 0
+selection_criteria:
+  -
+    id: user_role
+    roles:
+      recruiter: recruiter
+    negate: true
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }

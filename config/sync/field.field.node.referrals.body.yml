@@ -1,0 +1,24 @@
+uuid: 95e3a4b9-2b1c-467e-974a-e6f4d3586384
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.referrals
+  module:
+    - text
+_core:
+  default_config_hash: cPL3Xyu6RCo7dDuFDWgyLheO4ECnXpkuux1e6Oe8Muk
+id: node.referrals.body
+field_name: body
+entity_type: node
+bundle: referrals
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

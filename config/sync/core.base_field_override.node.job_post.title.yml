@@ -1,0 +1,20 @@
+uuid: 22913c21-8583-4bcc-845d-ae0714359844
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_post
+_core:
+  default_config_hash: '-c3gUwFM-Qrva4FmDK0m9fLzLua8OaGFrhRABf6Zfyk'
+id: node.job_post.title
+field_name: title
+entity_type: node
+bundle: job_post
+label: 'Job Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

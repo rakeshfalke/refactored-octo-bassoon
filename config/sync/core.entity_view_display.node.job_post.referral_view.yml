@@ -1,0 +1,316 @@
+uuid: 5c37bc78-d79c-4b87-93fa-a7b1e4efec12
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.referral_view
+    - field.field.node.job_post.body
+    - field.field.node.job_post.field_jp_experience_max
+    - field.field.node.job_post.field_jp_experience_min
+    - field.field.node.job_post.field_jp_expires_on
+    - field.field.node.job_post.field_jp_good_to_have_skills
+    - field.field.node.job_post.field_jp_job_id
+    - field.field.node.job_post.field_jp_location
+    - field.field.node.job_post.field_jp_must_have_skills
+    - field.field.node.job_post.field_jp_special_notes
+    - node.type.job_post
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          7f713766-b46e-4cc1-b333-64cb160f720a:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: author
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: bottom
+            weight: -5
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 7f713766-b46e-4cc1-b333-64cb160f720a
+          3cf17aa2-3b0f-4041-9210-7667e0e0039b:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: timestamp
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: bottom
+            weight: -4
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 3cf17aa2-3b0f-4041-9210-7667e0e0039b
+          20bada9c-6857-4d99-9a07-91511a1315fb:
+            id: 'entity_field:node:body'
+            label: Description
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: first
+            weight: -5
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 20bada9c-6857-4d99-9a07-91511a1315fb
+          d957bf30-7e81-4b23-80ce-2b93f29f3c9a:
+            id: 'entity_field:node:field_jp_experience_max'
+            label: 'Experience Max'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: number_integer
+              settings:
+                thousand_separator: ''
+                prefix_suffix: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: second
+            weight: -4
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: d957bf30-7e81-4b23-80ce-2b93f29f3c9a
+          6a41405c-36ab-4560-b361-8fba9aac44c7:
+            id: 'entity_field:node:field_jp_experience_min'
+            label: 'Experience Min'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: number_integer
+              settings:
+                thousand_separator: ''
+                prefix_suffix: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: second
+            weight: -5
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 6a41405c-36ab-4560-b361-8fba9aac44c7
+          5457b2be-1caa-43c1-8d1c-0f5f8ccadb1b:
+            id: 'entity_field:node:field_jp_expires_on'
+            label: 'Expires on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: datetime_default
+              settings:
+                format_type: medium
+                timezone_override: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: first
+            weight: -3
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 5457b2be-1caa-43c1-8d1c-0f5f8ccadb1b
+          7b162116-caac-45e8-93bb-ddc8a057a447:
+            id: 'entity_field:node:field_jp_good_to_have_skills'
+            label: 'Good to Have Skills'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: second
+            weight: -2
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 7b162116-caac-45e8-93bb-ddc8a057a447
+          71daf2ea-3c4c-448d-85a1-1984b05ec972:
+            id: 'entity_field:node:field_jp_job_id'
+            label: 'Job ID'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: top
+            weight: -10
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 71daf2ea-3c4c-448d-85a1-1984b05ec972
+          1b3a5da8-e418-459d-8a05-77ac1c397ebe:
+            id: 'entity_field:node:field_jp_location'
+            label: Location
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: first
+            weight: -4
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 1b3a5da8-e418-459d-8a05-77ac1c397ebe
+          2971085c-23f9-46bd-a3cf-f23160dbebbb:
+            id: 'entity_field:node:field_jp_must_have_skills'
+            label: 'Must Have Skills'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: second
+            weight: -3
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 2971085c-23f9-46bd-a3cf-f23160dbebbb
+          e81f1ea5-ed1f-4a01-a311-e4e1b027eeac:
+            id: 'entity_field:node:field_jp_special_notes'
+            label: 'Special Notes'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: bottom
+            weight: -3
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: e81f1ea5-ed1f-4a01-a311-e4e1b027eeac
+        id: panels_variant
+        label: Default
+        uuid: bd7b66fb-34c8-4213-935c-c8fba829a317
+        weight: 0
+        layout: twocol
+        layout_settings: {  }
+        page_title: null
+        storage_type: panelizer_default
+        storage_id: 'node:job_post:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+_core:
+  default_config_hash: VJ0ByaXCAWvpwxDhXchfD_xK1VjDw8OUWrCLIPKWopU
+id: node.job_post.referral_view
+targetEntityType: node
+bundle: job_post
+mode: referral_view
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_jp_experience_max:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_jp_experience_min:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_jp_good_to_have_skills:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_jp_job_id:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_jp_location:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_jp_must_have_skills:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_jp_special_notes:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_jp_expires_on: true
+  links: true
+  workbench_moderation_control: true

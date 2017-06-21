@@ -1,0 +1,20 @@
+uuid: e74bc9a8-1d57-4dd1-80bf-daa6a057a50a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_jp_location
+field_name: field_jp_location
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

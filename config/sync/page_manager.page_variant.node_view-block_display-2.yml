@@ -1,0 +1,50 @@
+uuid: 419af7e5-96bf-4994-8dac-971fbf43863a
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - user
+id: node_view-block_display-2
+label: 'Jobs View (For Referral)'
+variant: block_display
+variant_settings:
+  blocks:
+    eea91e00-befe-460c-b80b-414e94126404:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: referral_view
+      region: top
+      weight: 0
+      uuid: eea91e00-befe-460c-b80b-414e94126404
+      context_mapping:
+        entity: node
+  id: block_display
+  uuid: ae47379e-d007-457f-98a1-504283c34234
+  label: null
+  weight: 0
+  page_title: 'Jobs Details'
+page: node_view
+weight: 0
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      job_post: job_post
+    negate: false
+    context_mapping:
+      node: node
+  -
+    id: user_role
+    roles:
+      anonymous: anonymous
+      referrals_creator: referrals_creator
+    negate: false
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }

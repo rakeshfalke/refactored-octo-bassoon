@@ -1,0 +1,23 @@
+uuid: d62d9c4c-b128-4ad7-9b1e-e01079d19dd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_special_notes
+    - node.type.job_post
+  module:
+    - text
+_core:
+  default_config_hash: FFAovxKGws9JoV1bnLAsgSo-9wuLtlN8aSBZ2DGu9Hg
+id: node.job_post.field_jp_special_notes
+field_name: field_jp_special_notes
+entity_type: node
+bundle: job_post
+label: 'Special Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

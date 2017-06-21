@@ -1,0 +1,14 @@
+uuid: 76770282-0499-41a6-b866-ed71dffa88b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.job_post_creator
+  module:
+    - user
+id: user_remove_role_action.job_post_creator
+label: 'Remove the Job Post creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: job_post_creator

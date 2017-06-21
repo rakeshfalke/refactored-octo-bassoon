@@ -1,0 +1,20 @@
+uuid: 487cdda6-a440-458f-99cd-8bb3630b8eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.referrals
+_core:
+  default_config_hash: XKBRLNsGA5qCPzIVodCpyz3GJ6mWoV6itLnlLszDOVQ
+id: node.referrals.title
+field_name: title
+entity_type: node
+bundle: referrals
+label: 'Candidate Full Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

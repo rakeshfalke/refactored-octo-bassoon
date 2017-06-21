@@ -1,0 +1,14 @@
+uuid: 5b90e5e2-b642-412c-8379-bd63f595d230
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.job_post_reviewer
+  module:
+    - user
+id: user_remove_role_action.job_post_reviewer
+label: 'Remove the Job Post reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: job_post_reviewer

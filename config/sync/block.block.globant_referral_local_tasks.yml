@@ -1,0 +1,22 @@
+uuid: 483f84da-85fb-4d50-88ff-5586c22a0d31
+langcode: en
+status: true
+dependencies:
+  theme:
+    - globant_referral
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: globant_referral_local_tasks
+theme: globant_referral
+region: header
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

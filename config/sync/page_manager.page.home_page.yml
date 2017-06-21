@@ -1,0 +1,12 @@
+uuid: 9e726e4d-694e-4616-ab98-0d2ad9163ac4
+langcode: en
+status: true
+dependencies: {  }
+id: home_page
+label: 'Home Page'
+description: 'Home Page'
+use_admin_theme: false
+path: /joblist
+access_logic: and
+access_conditions: {  }
+parameters: {  }

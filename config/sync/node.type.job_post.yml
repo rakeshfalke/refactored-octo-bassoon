@@ -1,0 +1,28 @@
+uuid: 2335c334-a7f6-4a5d-aaef-2d3570ef3136
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - draft
+      - published
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: nVqplDgyqnu5-0HNg4MKrzjKv5p1dnjSJzFY_H4cmLE
+name: 'Job Post'
+type: job_post
+description: 'Job Post'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

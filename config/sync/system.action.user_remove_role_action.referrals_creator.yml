@@ -1,0 +1,14 @@
+uuid: 4bb667c3-b51c-400d-8892-70f8ce756a7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.referrals_creator
+  module:
+    - user
+id: user_remove_role_action.referrals_creator
+label: 'Remove the Referrals creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: referrals_creator

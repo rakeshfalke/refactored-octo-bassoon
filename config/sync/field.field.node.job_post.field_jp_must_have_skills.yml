@@ -1,0 +1,30 @@
+uuid: f6983e7d-f74f-495e-9ec2-0bac8f0cd249
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_must_have_skills
+    - node.type.job_post
+    - taxonomy.vocabulary.must_have_skills
+_core:
+  default_config_hash: C0xQox8g7QXAj9YZjSivdz8iZlFEKovWDX3r7arMmYg
+id: node.job_post.field_jp_must_have_skills
+field_name: field_jp_must_have_skills
+entity_type: node
+bundle: job_post
+label: 'Must Have Skills'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      must_have_skills: must_have_skills
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

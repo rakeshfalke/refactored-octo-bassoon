@@ -1,0 +1,25 @@
+uuid: 4155bcec-decd-410f-b044-7b631435bbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_experience_min
+    - node.type.job_post
+_core:
+  default_config_hash: jkwOhoAEQ7rfgoeSG7q901gd1fAZvDvEq7yUV_83ycw
+id: node.job_post.field_jp_experience_min
+field_name: field_jp_experience_min
+entity_type: node
+bundle: job_post
+label: 'Experience Min'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,49 @@
+uuid: cc1e260c-70e6-4995-9a35-c3448fdab036
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - user
+id: node_view-block_display-0
+label: 'Referral View (For Referral)'
+variant: block_display
+variant_settings:
+  blocks:
+    5663aa1d-4eaf-4d8a-bf48-9aa9b460ff06:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: referral_view
+      region: top
+      weight: 0
+      uuid: 5663aa1d-4eaf-4d8a-bf48-9aa9b460ff06
+      context_mapping:
+        entity: node
+  id: block_display
+  uuid: fe93983f-b201-49be-890d-55434a1a4b96
+  label: null
+  weight: 0
+  page_title: 'Referrals details'
+page: node_view
+weight: -9
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      referrals: referrals
+    negate: false
+    context_mapping:
+      node: node
+  -
+    id: user_role
+    roles:
+      referrals_creator: referrals_creator
+    negate: false
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }

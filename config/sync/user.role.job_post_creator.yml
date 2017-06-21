@@ -1,0 +1,28 @@
+uuid: 0554b3d5-2504-4e2c-a4aa-a9101f1ead62
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: oldtAZqz04ZLPUy_JYEk1h6VTiWtLJ-ugVzPSJGQmbc
+id: job_post_creator
+label: 'Job Post creator'
+weight: 7
+is_admin: null
+permissions:
+  - 'access image_browser entity browser pages'
+  - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
+  - 'administer panelizer node job_post content'
+  - 'administer panelizer node job_post layout'
+  - 'change layouts in place editing'
+  - 'create job_post content'
+  - 'create url aliases'
+  - 'edit own job_post content'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view job_post revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

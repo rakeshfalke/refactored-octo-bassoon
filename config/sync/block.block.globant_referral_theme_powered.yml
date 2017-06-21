@@ -1,0 +1,22 @@
+uuid: a2fbaae0-d5f3-4d96-8047-a98fb5a428d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - globant_referral_theme
+_core:
+  default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
+id: globant_referral_theme_powered
+theme: globant_referral_theme
+region: footer
+weight: -10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

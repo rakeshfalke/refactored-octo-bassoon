@@ -1,0 +1,11 @@
+uuid: 3eb93646-ae7b-4ef1-b32a-66ab076cf84d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pIV9wnX5Kt3dZxBoAcMgXf3Lw3UoE6dLpR5UIPZj6uc
+name: 'Good to Have Skills'
+vid: good_to_have_skills
+description: 'Good to Have Skills'
+hierarchy: 0
+weight: 0

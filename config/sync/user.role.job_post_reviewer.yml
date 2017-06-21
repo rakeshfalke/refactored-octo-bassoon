@@ -1,0 +1,20 @@
+uuid: b802f6ad-335d-4f0e-88bc-24d45a77a43b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: az25BLagcHzplzsOx-HyGzsFcN5cn5JLCN_5hZ5jz2A
+id: job_post_reviewer
+label: 'Job Post reviewer'
+weight: 8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'delete any job_post content'
+  - 'edit any job_post content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'view moderation states'

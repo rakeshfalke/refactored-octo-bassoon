@@ -1,0 +1,14 @@
+uuid: 73e4de1c-78c3-49be-99c6-d702c581157d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.referrals_reviewer
+  module:
+    - user
+id: user_remove_role_action.referrals_reviewer
+label: 'Remove the Referrals reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: referrals_reviewer

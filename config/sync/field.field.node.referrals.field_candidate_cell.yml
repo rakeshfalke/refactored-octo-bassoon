@@ -1,0 +1,21 @@
+uuid: 9f7bea2b-bae5-4171-9955-646670dea375
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_cell
+    - node.type.referrals
+_core:
+  default_config_hash: 1hyd2caVzUNcV3uTp-F4q5Q2rjyE3nnR6qY8tXrE9JE
+id: node.referrals.field_candidate_cell
+field_name: field_candidate_cell
+entity_type: node
+bundle: referrals
+label: 'Candidate Cell'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

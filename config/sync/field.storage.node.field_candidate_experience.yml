@@ -1,0 +1,22 @@
+uuid: 06ef731e-5f8c-429d-91a5-cd45b811c350
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: v3Ubf9PTlW5R9Z3JtGvZVV0O2oF6_W5x_9kxXWp61XY
+id: node.field_candidate_experience
+field_name: field_candidate_experience
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 1
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

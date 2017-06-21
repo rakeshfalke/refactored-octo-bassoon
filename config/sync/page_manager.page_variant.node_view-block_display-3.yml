@@ -1,0 +1,54 @@
+uuid: be0675f8-f1ab-4b42-80b2-59540392c39b
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - user
+id: node_view-block_display-3
+label: 'Jobs View (For Recruiter)'
+variant: block_display
+variant_settings:
+  blocks:
+    0817b610-c75b-4a05-bf85-07e0e1e8eff7:
+      id: 'entity_view:node'
+      label: 'Entity view (Content)'
+      provider: ctools
+      label_display: '0'
+      view_mode: default
+      region: top
+      weight: 0
+      uuid: 0817b610-c75b-4a05-bf85-07e0e1e8eff7
+      context_mapping:
+        entity: node
+  id: block_display
+  uuid: 29672b5e-9cc9-4efe-b8fd-6ebd7b9023ff
+  label: null
+  weight: 0
+  page_title: 'Jobs Details'
+page: node_view
+weight: 0
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      job_post: job_post
+    negate: false
+    context_mapping:
+      node: node
+  -
+    id: user_role
+    roles:
+      administrator: administrator
+      job_post_creator: job_post_creator
+      job_post_reviewer: job_post_reviewer
+      referrals_reviewer: referrals_reviewer
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }

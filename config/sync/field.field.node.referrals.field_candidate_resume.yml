@@ -1,0 +1,29 @@
+uuid: 8915437e-09ae-4da3-a520-435193f98c1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_resume
+    - node.type.referrals
+  module:
+    - file
+_core:
+  default_config_hash: DgVsg8J-8kdrKCNrhIto4ZM92Hnw4lZvLgk5rSykb1g
+id: node.referrals.field_candidate_resume
+field_name: field_candidate_resume
+entity_type: node
+bundle: referrals
+label: 'Candidate Resume'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

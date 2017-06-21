@@ -1,0 +1,25 @@
+uuid: 1d1f598f-9543-4b31-b71c-184c52866f53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jp_experience_max
+    - node.type.job_post
+_core:
+  default_config_hash: TWZxpg2B1kcz3iace_rrcKNnYf1gpQAM0YIvgc9h92w
+id: node.job_post.field_jp_experience_max
+field_name: field_jp_experience_max
+entity_type: node
+bundle: job_post
+label: 'Experience Max'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

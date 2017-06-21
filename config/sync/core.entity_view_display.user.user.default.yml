@@ -1,0 +1,24 @@
+uuid: 15b5b02f-ccfc-447c-914b-7ccffed40365
+langcode: en
+status: true
+dependencies:
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,14 @@
+uuid: b5e25578-d580-48bd-a29b-e7589c1210fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: recruiter
+label: Recruiter
+weight: 12
+is_admin: null
+permissions: {  }

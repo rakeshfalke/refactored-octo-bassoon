@@ -1,0 +1,14 @@
+uuid: e6d33017-8c8e-422f-a06d-2059ade46cc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.referrals_creator
+  module:
+    - user
+id: user_add_role_action.referrals_creator
+label: 'Add the Referrals creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: referrals_creator

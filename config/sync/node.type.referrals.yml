@@ -1,0 +1,20 @@
+uuid: 058e370d-e4e7-4771-a2a4-3c219e65585f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: FNvfa86w76GFQ7sBqMUIvZUlM-Y2I2-khQ7zmYxpsh0
+name: Referrals
+type: referrals
+description: Referrals
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

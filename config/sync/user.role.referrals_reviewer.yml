@@ -1,0 +1,20 @@
+uuid: af65b6e7-6ba8-4add-b80d-095a277c2908
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j-ECffJBxf0nCx6iWTkclKmLDl00DVOdmtmrssw1okM
+id: referrals_reviewer
+label: 'Referrals reviewer'
+weight: 10
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'delete any referrals content'
+  - 'edit any referrals content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'view moderation states'

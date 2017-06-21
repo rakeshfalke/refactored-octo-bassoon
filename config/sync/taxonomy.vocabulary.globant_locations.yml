@@ -1,0 +1,11 @@
+uuid: dfa8f087-078f-46b5-ab1e-5a3c1df7702b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vbw0fbTWwHwWtSFPrSWpptbVAqwHSGvZCWsXXyyAPMc
+name: Locations
+vid: globant_locations
+description: 'Globant Locations'
+hierarchy: 0
+weight: 0

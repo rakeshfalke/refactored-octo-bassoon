@@ -1,0 +1,34 @@
+uuid: 71590268-8891-47b9-a1dc-cc13235329ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_status
+    - node.type.referrals
+    - taxonomy.vocabulary.candidate_status
+  content:
+    - 'taxonomy_term:candidate_status:95a98d72-dfaa-42ab-933e-3564345e5752'
+_core:
+  default_config_hash: CoWk79mbAJ-Gp5diDZM2chIT6ZxcYOiclzZTF2d-WcI
+id: node.referrals.field_candidate_status
+field_name: field_candidate_status
+entity_type: node
+bundle: referrals
+label: 'Candidate Status'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 95a98d72-dfaa-42ab-933e-3564345e5752
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      candidate_status: candidate_status
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
