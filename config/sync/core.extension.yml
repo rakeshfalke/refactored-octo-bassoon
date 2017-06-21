@@ -35,7 +35,6 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
-  job_post: 0
   layout_discovery: 0
   lightning_contact_form: 0
   lightning_core: 0
@@ -71,7 +70,6 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
-  referrals: 0
   registration_role: 0
   scheduled_updates: 0
   search: 0
