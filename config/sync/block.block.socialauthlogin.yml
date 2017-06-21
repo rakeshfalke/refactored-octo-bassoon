@@ -1,0 +1,28 @@
+uuid: b2726185-5e86-4b8a-a098-334363e946c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_auth
+    - user
+  theme:
+    - globant_referral_theme
+id: socialauthlogin
+theme: globant_referral_theme
+region: navigation_collapsible
+weight: -4
+provider: null
+plugin: social_auth_login
+settings:
+  id: social_auth_login
+  label: 'Social Auth Login'
+  provider: social_auth
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

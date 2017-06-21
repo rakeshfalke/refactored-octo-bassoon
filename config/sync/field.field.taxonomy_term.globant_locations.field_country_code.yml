@@ -1,0 +1,21 @@
+uuid: 1fc15c43-37a3-4b91-89ac-46c69ed17d08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_country_code
+    - taxonomy.vocabulary.globant_locations
+id: taxonomy_term.globant_locations.field_country_code
+field_name: field_country_code
+entity_type: taxonomy_term
+bundle: globant_locations
+label: 'Country Code'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: IN
+default_value_callback: ''
+settings: {  }
+field_type: string

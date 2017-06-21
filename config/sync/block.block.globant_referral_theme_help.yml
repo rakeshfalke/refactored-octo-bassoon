@@ -11,7 +11,7 @@ _core:
 id: globant_referral_theme_help
 theme: globant_referral_theme
 region: help
-weight: -30
+weight: -7
 provider: null
 plugin: help_block
 settings:

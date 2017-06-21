@@ -9,7 +9,7 @@ _core:
 id: globant_referral_theme_local_actions
 theme: globant_referral_theme
 region: header
-weight: 20
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:

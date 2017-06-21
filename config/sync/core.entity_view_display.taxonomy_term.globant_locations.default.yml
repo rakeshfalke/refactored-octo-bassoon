@@ -1,0 +1,30 @@
+uuid: dd0e1668-23a0-46ae-920e-b1815fd0b783
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.globant_locations.field_country_code
+    - taxonomy.vocabulary.globant_locations
+  module:
+    - text
+id: taxonomy_term.globant_locations.default
+targetEntityType: taxonomy_term
+bundle: globant_locations
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_country_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

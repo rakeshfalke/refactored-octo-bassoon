@@ -11,7 +11,7 @@ _core:
 id: globant_referral_theme_messages
 theme: globant_referral_theme
 region: header
-weight: -50
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

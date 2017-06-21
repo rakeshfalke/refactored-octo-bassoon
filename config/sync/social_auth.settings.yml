@@ -2,7 +2,7 @@ auth:
   social_auth_google:
     route: social_auth_google.redirect_to_google
     img_path: modules/contrib/social_auth_google/img/google_logo.svg
-post_login: /user
+post_login: /joblist
 redirect_user_form: false
 disable_admin_login: true
 disabled_roles:
@@ -18,5 +18,7 @@ disabled_roles:
   job_post_reviewer: '0'
   referrals_creator: '0'
   referrals_reviewer: '0'
+  recruiter_admin: '0'
+  recruiter: '0'
 _core:
   default_config_hash: 1tS3jCuYxV3TXQ2cq320XarjdXWprvWK5bru8DCsIUY

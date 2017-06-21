@@ -13,7 +13,7 @@ _core:
 id: globant_referral_theme_main_menu
 theme: globant_referral_theme
 region: navigation_collapsible
-weight: 10
+weight: -6
 provider: null
 plugin: 'system_menu_block:main'
 settings:

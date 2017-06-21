@@ -9,6 +9,7 @@ drush
 .DS_Store
 *.css
 *.css.map
+bin
 web/core
 web/modules/contrib
 web/themes/contrib
@@ -46,3 +47,5 @@ web/custom/*/css/*
 web/custom/*/dist/*
 web/themes/custom/*/public
 web/themes/custom/*/dist
+
+web/profiles/contrib
