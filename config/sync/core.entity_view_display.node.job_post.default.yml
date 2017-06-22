@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.job_post.field_jp_location
     - field.field.node.job_post.field_jp_must_have_skills
     - field.field.node.job_post.field_jp_special_notes
+    - field.field.node.job_post.field_keywords
     - node.type.job_post
   module:
     - datetime
@@ -318,6 +319,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_keywords:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   links:
     weight: 0

@@ -1,0 +1,19 @@
+uuid: 421049f6-c8bc-4cf1-962c-17ad6da36675
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_cell_alternate
+    - node.type.referrals
+id: node.referrals.field_candidate_cell_alternate
+field_name: field_candidate_cell_alternate
+entity_type: node
+bundle: referrals
+label: 'Alternate Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

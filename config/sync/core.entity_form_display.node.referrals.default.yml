@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.referrals.body
     - field.field.node.referrals.field_assigned_to
     - field.field.node.referrals.field_candidate_cell
+    - field.field.node.referrals.field_candidate_cell_alternate
     - field.field.node.referrals.field_candidate_email
     - field.field.node.referrals.field_candidate_experience
     - field.field.node.referrals.field_candidate_location
@@ -36,6 +37,14 @@ content:
     region: content
   field_candidate_cell:
     weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_candidate_cell_alternate:
+    weight: 26
     settings:
       size: 60
       placeholder: ''

@@ -1,10 +1,13 @@
 cdn_provider: ''
 _core:
   default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
+schemas:
+  bootstrap: 8000
+  globant_referral_theme: 8000
 favicon:
   mimetype: image/vnd.microsoft.icon
-  path: profiles/contrib/lightning/favicon.ico
-  url: 'http://referral-portal.dev/profiles/contrib/lightning/favicon.ico'
+  path: themes/custom/globant_referral_theme/favicon.ico
+  url: 'http://referrals.globant.dev/profiles/contrib/lightning/favicon.ico'
   use_default: false
 features:
   comment_user_picture: true
@@ -12,9 +15,8 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: profiles/contrib/lightning/lightning.png
+  path: themes/custom/globant_referral_theme/logo.svg
   url: ''
   use_default: false
-schemas:
-  bootstrap: 8000
-  globant_referral_theme: 8000
+table_responsive: '-1'
+table: ''

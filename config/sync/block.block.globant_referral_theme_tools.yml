@@ -1,6 +1,6 @@
 uuid: 6550492d-a521-4e1f-aacd-87e0fdd140c6
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -12,7 +12,7 @@ _core:
   default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
 id: globant_referral_theme_tools
 theme: globant_referral_theme
-region: sidebar_second
+region: navigation
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'

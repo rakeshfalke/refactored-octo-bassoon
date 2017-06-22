@@ -1,5 +1,5 @@
 match_email: 1
 before_month: '6'
-referral_status: ''
+referral_status: '8'
 error_message: error_message
 job_id_prefix: JOB
