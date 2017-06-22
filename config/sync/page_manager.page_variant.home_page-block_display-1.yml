@@ -42,7 +42,7 @@ variant_settings:
   uuid: 953efd97-627e-4d61-9acd-3dfeab6c8ef4
   label: null
   weight: 0
-  page_title: Recruiters
+  page_title: ''
 page: home_page
 weight: 0
 selection_criteria:

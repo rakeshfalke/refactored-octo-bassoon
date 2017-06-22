@@ -1,0 +1,22 @@
+uuid: dd1515c6-769a-4265-9f05-bf4ee8435f8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: job_post
+label: 'job post'
+type: 'canonical_entities:node'
+pattern: '[node:original:content-type]/[node:nid]'
+selection_criteria:
+  01c8f19a-ec57-4503-b90a-3c48302181bd:
+    id: node_type
+    bundles:
+      job_post: job_post
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 01c8f19a-ec57-4503-b90a-3c48302181bd
+selection_logic: and
+weight: -5
+relationships: {  }

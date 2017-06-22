@@ -1,0 +1,5 @@
+services:
+  globant_referral.route_subscriber:
+    class: Drupal\globant_referral\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

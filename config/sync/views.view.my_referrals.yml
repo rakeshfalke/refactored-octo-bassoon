@@ -465,6 +465,7 @@ display:
           plugin_id: numeric
       display_extenders: {  }
       use_ajax: true
+      css_class: well
     cache_metadata:
       max-age: 0
       contexts:
@@ -885,7 +886,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1759,7 +1760,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true

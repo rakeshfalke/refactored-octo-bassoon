@@ -29,7 +29,7 @@ variant_settings:
   uuid: b42d9cb2-bbc0-454e-9f2d-972fca3fc5ae
   label: null
   weight: 0
-  page_title: 'All Referrals'
+  page_title: ''
 page: all_referrals
 weight: 0
 selection_criteria: {  }

@@ -795,6 +795,7 @@ display:
       arguments: {  }
       display_extenders: {  }
       use_ajax: true
+      css_class: well
     cache_metadata:
       max-age: 0
       contexts:
@@ -1463,7 +1464,7 @@ display:
           text: edit
           entity_type: node
           plugin_id: entity_link_edit
-      title: '<none>'
+      title: 'Job Postings'
     cache_metadata:
       max-age: 0
       contexts:
@@ -1487,7 +1488,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: '<none>'
+      title: 'Job Postings'
       defaults:
         title: false
         filters: false
