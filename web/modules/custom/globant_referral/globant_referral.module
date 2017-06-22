@@ -35,6 +35,24 @@ function globant_referral_node_insert(NodeInterface $node) {
   if ($node->getType() === 'job_post') {
     $job_id = _globant_referral_get_job_id($node);
     $node->set('field_jp_job_id', $job_id);
+    // Add keywords from skills and title
+    $tids = [];
+    $skills = [];
+    $skills_tid = $node->get('field_jp_must_have_skills')->getValue();
+    foreach ($skills_tid as $tid) {
+      $tids[] = $tid['target_id'];
+    }
+    $skills_terms = taxonomy_term_load_multiple($tids);
+    foreach ($skills_terms as $term) {
+      $skill_code = $term->getName();
+      if (!in_array($skill_code, $code)) {
+        $skills[] = $skill_code;
+      }
+    }
+
+    $keywords = $node->getTitle() . ',';
+    $keywords .= implode(',', $skills);
+    $node->set('field_keywords', $keywords);
     $node->setNewRevision(FALSE);
     $node->save();
   }
@@ -102,13 +120,17 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
 
    switch ($form_id) {
     case 'views_exposed_form':
-
       if ($form['#id'] == 'views-exposed-form-my-referrals-block-all-referrals') {
         $options = _globant_referral_get_user();
         $form['field_assigned_to_target_id']['#type'] = "select";
         $form['field_assigned_to_target_id']['#size'] = null;
         $form['field_assigned_to_target_id']['#default_value'] = '';
         $form['field_assigned_to_target_id']['#options'] = $options;
+      }
+      $jobs_view = ['views-exposed-form-job-post-block-job-post-recruiter',
+      'views-exposed-form-job-post-job-posts'];
+      if (in_array($form['#id'], $jobs_view)) {
+        $form['#action'] = '/';
       }
     break;
 
