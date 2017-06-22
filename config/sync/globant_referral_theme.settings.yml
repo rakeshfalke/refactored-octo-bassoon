@@ -15,11 +15,6 @@ logo:
   use_default: false
 table_responsive: '-1'
 table: ''
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
 region_wells:
   navigation: ''
   navigation_collapsible: ''
@@ -29,3 +24,10 @@ region_wells:
   content: ''
   sidebar_first: ''
   footer: well
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+table_hover: 0
+table_striped: 0
