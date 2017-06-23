@@ -135,6 +135,7 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
     break;
 
     case 'node_job_post_edit_form':
+    case 'node_job_post_form':
       $form['#theme'] = 'job_post_form';
     break;
 
