@@ -20,6 +20,7 @@ permissions:
   - 'edit own job_post content'
   - 'use draft_draft transition'
   - 'use draft_needs_review transition'
+  - 'use expires transition'
   - 'use needs_review_needs_review transition'
   - 'use text format rich_text'
   - 'view any unpublished content'

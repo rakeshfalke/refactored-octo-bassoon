@@ -11,4 +11,7 @@ id: recruiter_admin
 label: 'Recruiter Admin'
 weight: 11
 is_admin: null
-permissions: {  }
+permissions:
+  - 'administer globantuser'
+  - 'administer permissions'
+  - 'administer users'

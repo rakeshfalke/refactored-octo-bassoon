@@ -1,0 +1,12 @@
+uuid: f29cd4e9-4014-4496-9578-642a649d44ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.expires
+    - workbench_moderation.moderation_state.published
+id: expires
+label: Expires
+stateFrom: published
+stateTo: expires
+weight: -10

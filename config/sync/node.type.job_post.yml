@@ -15,7 +15,7 @@ third_party_settings:
     allowed_moderation_states:
       - draft
       - published
-      - needs_review
+      - expires
     default_moderation_state: draft
 _core:
   default_config_hash: nVqplDgyqnu5-0HNg4MKrzjKv5p1dnjSJzFY_H4cmLE
@@ -23,6 +23,6 @@ name: 'Job Post'
 type: job_post
 description: 'Job Post'
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: true

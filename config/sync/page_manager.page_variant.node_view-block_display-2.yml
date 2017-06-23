@@ -27,7 +27,7 @@ variant_settings:
   uuid: ae47379e-d007-457f-98a1-504283c34234
   label: null
   weight: 0
-  page_title: 'Jobs Details'
+  page_title: ''
 page: node_view
 weight: 0
 selection_criteria:

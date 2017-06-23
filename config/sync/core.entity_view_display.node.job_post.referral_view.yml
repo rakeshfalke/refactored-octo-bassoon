@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.job_post.field_jp_location
     - field.field.node.job_post.field_jp_must_have_skills
     - field.field.node.job_post.field_jp_special_notes
+    - field.field.node.job_post.field_keywords
     - node.type.job_post
   module:
     - panelizer
@@ -247,7 +248,7 @@ bundle: job_post
 mode: referral_view
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
     weight: 1
     settings: {  }
@@ -275,7 +276,7 @@ content:
     weight: 6
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -291,7 +292,7 @@ content:
     weight: 7
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -299,7 +300,7 @@ content:
     weight: 5
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -312,5 +313,6 @@ content:
     region: content
 hidden:
   field_jp_expires_on: true
+  field_keywords: true
   links: true
   workbench_moderation_control: true
