@@ -58,4 +58,82 @@
   .view-filters{
     text-align: right;
   }
+    a
+    {
+        text-decoration: none;
+    }
+    a:hover
+    {
+        text-decoration: none;
+    }
+    .dec-heading
+    {
+        text-align: center;
+        margin-bottom: 50px;
+        color: #92c41e;
+        font-size: 40px;
+        font-weight: bold;
+        span
+        {
+           color: #92c41e;
+           text-decoration: none;
+           text-transform: uppercase;
+        }
+    }
+
+    .info-card{
+        background: #eaeaea;
+        padding: 20px;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
+        margin-bottom: 50px;
+        .field--label
+        {
+        font-size: 18px;
+
+        margin-bottom: 10px;
+
+        }
+        .field--item
+        {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #777777;
+
+
+        }
+        .field--label-above
+        {
+        border-bottom: 1px dotted #ccc;
+        margin-bottom: 15px
+        }
+        .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+        }
+    }
+
+
+    .info-desc
+    {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        .field--label
+        {
+        color: #92c41e;
+        margin-top: 20px;
+        }
+        .field--item
+        {
+        color: #777777;
+        font-weight: normal;
+        }
+        .bottom {
+        text-align: center;
+        margin-top: 20px;
+        }
+
+
+
 }

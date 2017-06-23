@@ -129,14 +129,19 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
       }
       $jobs_view = ['views-exposed-form-job-post-block-job-post-recruiter',
       'views-exposed-form-job-post-job-posts'];
-      if (in_array($form['#id'], $jobs_view)) {
+      if (in_array($form['#id'], $jobs_view )) {
         $form['#action'] = '/';
       }
+    break;
+
+    case 'node_job_post_edit_form':
+      $form['#theme'] = 'job_post_form';
     break;
 
     case 'node_referrals_form':
     case 'node_referrals_edit_form':
 
+      $form['#theme'] = 'referrals_form';
       $user_roles = \Drupal::currentUser()->getRoles();
       $form['field_candidate_status']['#access'] = FALSE;
       $form['field_isactive']['#access'] = FALSE;
@@ -272,10 +277,24 @@ function globant_referral_mail($key, &$message, $params) {
 /*
 * hook_theme()
 */
-function globant_referral_theme(){
-  return ['referral-mail-body' =>
-    ['variables' =>
-      ['text' => NULL,]
-    ,]
+function globant_referral_theme($existing, $type, $theme, $path){
+  return [
+    'referral_mail_body' => [
+      'path' => $path . '/templates',
+      'template' => 'referral-mail-body',
+      'variables' => [
+        'text'          => NULL,
+      ],
+    ],
+    'job_post_form' => [
+      'path' => $path . '/templates',
+      'template' => 'job-post-form',
+      'render element' => 'form',
+    ],
+    'referrals_form' => [
+      'path' => $path . '/templates',
+      'template' => 'referrals-form',
+      'render element' => 'form',
+    ],
   ];
 }

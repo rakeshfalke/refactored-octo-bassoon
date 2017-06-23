@@ -14,7 +14,7 @@ class RouteSubscriber extends RouteSubscriberBase {
    */
   protected function alterRoutes(RouteCollection $collection) {
     // Always deny access to '/user/register'.
-    if ($route = $collection->get('user.register')) {
+/*    if ($route = $collection->get('user.register')) {
       $route->setRequirement('_access', 'FALSE');
     }
     // Always deny access to '/user/password'.
@@ -28,6 +28,6 @@ class RouteSubscriber extends RouteSubscriberBase {
     // Always deny access to '/user/{user}'.
     if ($route = $collection->get('user.page')) {
       $route->setRequirement('_access', 'FALSE');
-    }
+    }*/
   }
 }

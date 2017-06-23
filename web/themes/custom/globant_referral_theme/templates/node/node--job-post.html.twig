@@ -79,24 +79,40 @@
 
   {{ title_prefix }}
   {% if not page %}
-    <h2{{ title_attributes }}>
+    <h2 class="dec-heading">
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('content') }}>
-    {{ content }}
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info-card">
+    {{ content.field_jp_job_id }}
+    {{ content.field_jp_experience_min }}
+    {{ content.field_jp_experience_max }}
+    {{ content.field_jp_must_have_skills }}
+    {{ content.field_jp_good_to_have_skills }}
+    {{ content.field_jp_location }}
+    {{ content.field_jp_expires_on }}
+    <div class="bottom">
+      <a class="btn btn-primary btn-twitter btn-sm" href="#">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="btn btn-danger btn-sm" rel="publisher" href="#">
+        <i class="fa fa-google-plus"></i>
+      </a>
+      <a class="btn btn-primary btn-sm" rel="publisher" href="#">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a class="btn btn-warning btn-sm" rel="publisher" href="#">
+        <i class="fa fa-behance"></i>
+      </a>
+    </div>
   </div>
-
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 info-desc">
+  {{ content.body }}
+  {{ content.field_jp_special_notes }}
+  <a class="btn btn-success btn-sm" rel="publisher" href="/add-referral">
+    Refer
+  </a>
+  </div>
 </article>
