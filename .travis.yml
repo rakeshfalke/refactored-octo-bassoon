@@ -4,18 +4,15 @@ php:
   - '7.1'
 install:
   - composer install
+  - drush status
+  - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
+  - drush en --y simpletest
+  - drush cr --yes
   # - composer global update
   # - composer global require drush/drush:8.*
 services:
   - mysql
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS globant_referral;'
-
-before_script:
-  - pwd
-  - drush status
-  - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
-  - drush en --y simpletest
-  - drush cr --yes
 
 script: drush test-run Syslog --xml --uri=http://127.0.0.1:8080
