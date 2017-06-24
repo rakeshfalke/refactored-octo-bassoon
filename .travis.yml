@@ -4,16 +4,23 @@ php:
   - '7.1'
 install:
   - composer install
-  - cd rakeshfalke/refactored-octo-bassoon
+  - composer global require drush/drush:8.*
   - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
   - drush cr --yes
   # - composer global update
-  # - composer global require drush/drush:8.*
+
 services:
   - mysql
+
+mysql:
+  database: globant_referral
+  username: root
+  encoding: utf8
+
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS globant_referral;'
+  - sudo apt-get update & /dev/null
+  - composer self-update
 
 script: drush test-run Syslog --xml --uri=http://127.0.0.1:8080
