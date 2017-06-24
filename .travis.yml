@@ -4,7 +4,7 @@ php:
   - '7.1'
 install:
   - composer install
-  - drush status
+  # - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
   - drush cr --yes
