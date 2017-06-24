@@ -4,7 +4,6 @@ php:
   - '7.1'
 install:
   - composer install
-  - composer global require drush/drush:8.*
   - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
@@ -20,3 +19,8 @@ mysql:
   encoding: utf8
 
 script: drush test-run Syslog --xml --uri=http://127.0.0.1:8080
+# To be able to run a webbrowser
+# If we need anything more powerful
+# than e.g. phantomjs
+before_install:
+  - composer global require drush/drush:8.*
