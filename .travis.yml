@@ -14,6 +14,7 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS globant_referral;'
 
 before_script:
+  - cd refactored-octo-bassoon
   - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
