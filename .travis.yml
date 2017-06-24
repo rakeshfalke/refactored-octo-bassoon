@@ -31,12 +31,14 @@ install:
   # # Install Drush
   # - composer global require drush/drush:8.*
   # - phpenv rehash
+  # Move into core directory for phpunits benefit
+  - cd web
+  - cp sites/default/default.settings.php sites/default/settings.php
+  - chmod a+w sites/default/settings.php
+  - chmod a+w sites/default
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
-  - bin/drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
+  - bin/drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes --account-name=admin --account-pass=admin
   # Import config for our pseudo install
   - bin/drush --verbose config-import active --yes
-  # Move into core directory for phpunits benefit
-  - cd core
-script: cd web
