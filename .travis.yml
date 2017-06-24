@@ -26,8 +26,8 @@ install:
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
-  - /usr/local/bin/drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
+  - ~/.composer/vendor/bin/drush.php --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
   # Import config for our pseudo install
-  - /usr/local/bin/drush --verbose config-import active --yes
+  - ~/.composer/vendor/bin/drush.php --verbose config-import active --yes
   # Move into core directory for phpunits benefit
   - cd core
