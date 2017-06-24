@@ -6,8 +6,8 @@ php:
   - nightly
 install:
   - composer install
-  - composer global update
-  - composer global require drush/drush:8.*
+  # - composer global update
+  # - composer global require drush/drush:8.*
 services:
   - mysql
 before_install:
