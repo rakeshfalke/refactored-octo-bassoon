@@ -39,6 +39,6 @@ install:
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
-  - bin/drush si lightning --db-url=mysql://root@127.0.0.1/drupal --yes
+  - ../bin/drush si lightning --db-url=mysql://root@127.0.0.1/drupal --yes
   # Import config for our pseudo install
-  - bin/drush --verbose config-import active --yes
+  - ../bin/drush --verbose config-import active --yes
