@@ -9,4 +9,4 @@ php:
   - nightly
 before_script: composer require nightwatch/nightwatch
 script: vendor/bin/nightwatch
-install: php vendor/vendors.php
+install: composer install
