@@ -13,6 +13,7 @@ matrix:
 
 before_install:
   - sudo apt-get update > /dev/null
+  - sudo apt-get install drush
 
 mysql:
   database: drupal
