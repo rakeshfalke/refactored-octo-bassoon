@@ -14,28 +14,22 @@ matrix:
 before_install:
   - sudo apt-get update > /dev/null
 
+services:
+  - mysql
+
 mysql:
   database: drupal
   username: root
   encoding: utf8
 
-# before_install:
-#   - sudo apt-get update & /dev/null
-#   - composer self-update
-
 install:
   - composer install
-  # add composer's global bin directory to the path
-  # see: https://github.com/drush-ops/drush#install---composer
-  # - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  # # Install Drush
-  # - composer global require drush/drush:8.*
-  # - phpenv rehash
-  # Move into core directory for phpunits benefit
+  # Move into web directory
   - cd web
   - cp sites/default/default.settings.php sites/default/settings.php
   - chmod a+w sites/default/settings.php
   - chmod a+w sites/default
+  - echo "\$config_directories['sync'] = '../../../config/sync/'" >> sites/default/settings.php
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
