@@ -2,8 +2,6 @@ language: php
 php:
   - '5.6'
   - '7.1'
-  - hhvm # on Trusty only
-  - nightly
 install:
   - composer install
   # - composer global update
@@ -14,7 +12,7 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS globant_referral;'
 
 before_script:
-  - cd refactored-octo-bassoon
+  - pwd
   - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
