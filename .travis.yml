@@ -39,3 +39,4 @@ install:
   - bin/drush --verbose config-import active --yes
   # Move into core directory for phpunits benefit
   - cd core
+script: cd web
