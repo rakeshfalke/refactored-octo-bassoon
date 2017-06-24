@@ -19,15 +19,15 @@ install:
   - composer install
   # add composer's global bin directory to the path
   # Install Drush
-  - composer global require drush/drush:dev-master
+  - composer global require drush/drush:8.*
   # see: https://github.com/drush-ops/drush#install---composer
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - phpenv rehash
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
-  - drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
+  - /usr/local/bin/drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
   # Import config for our pseudo install
-  - drush --verbose config-import active --yes
+  - /usr/local/bin/drush --verbose config-import active --yes
   # Move into core directory for phpunits benefit
   - cd core
