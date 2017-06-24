@@ -11,9 +11,9 @@ mysql:
   username: root
   encoding: utf8
 
-before_install:
-  - sudo apt-get update & /dev/null
-  - composer self-update
+# before_install:
+#   - sudo apt-get update & /dev/null
+#   - composer self-update
 
 install:
   - composer install
