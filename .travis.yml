@@ -4,6 +4,7 @@ php:
   - '7.1'
 install:
   - composer install
+  - cd rakeshfalke/refactored-octo-bassoon
   - drush status
   - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
   - drush en --y simpletest
