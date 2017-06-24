@@ -29,7 +29,7 @@ install:
   - cp sites/default/default.settings.php sites/default/settings.php
   - chmod a+w sites/default/settings.php
   - chmod a+w sites/default
-  - echo "\$config_directories['sync'] = '$HOME/refactored-octo-bassoon/config/sync';" >> sites/default/settings.php
+  - echo "\$config_directories['sync'] = '../../config/sync';" >> sites/default/settings.php
   # Create MySQL Database
   - mysql -e 'create database drupal;'
   # Install drupal default profile
