@@ -1,26 +1,29 @@
 language: php
 php:
-  - '5.6'
-  - '7.1'
-install:
-  - composer install
-  # - drush status
-  - drush site-install lightning --db-url='mysql://root@localhost/globant_referral' --site-name=Referrals
-  - drush en --y simpletest
-  - drush cr --yes
-  # - composer global update
-
-services:
-  - mysql
-
+  - 5.6
+  - 7.1
 mysql:
-  database: globant_referral
+  database: drupal
   username: root
   encoding: utf8
 
-script: drush test-run Syslog --xml --uri=http://127.0.0.1:8080
-# To be able to run a webbrowser
-# If we need anything more powerful
-# than e.g. phantomjs
 before_install:
-  - composer global require drush/drush:8.*
+  - sudo apt-get update & /dev/null
+  - composer self-update
+
+install:
+  - composer install
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  # Install Drush
+  - composer global require drush/drush:dev-master
+  - phpenv rehash
+  # Create MySQL Database
+  - mysql -e 'create database drupal;'
+  # Install drupal default profile
+  - drush --verbose site-install lightning --db-url=mysql://root:@127.0.0.1/drupal --yes
+  # Import config for our pseudo install
+  - drush --verbose config-import active --yes
+  # Move into core directory for phpunits benefit
+  - cd core
