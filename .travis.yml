@@ -38,3 +38,7 @@ install:
   - ../bin/drush cache-rebuild
   # Import config for our pseudo install
   - ../bin/drush config-import --yes
+
+before_script:
+# navigate out of module directory to prevent blown stack by recursive module lookup
+  - php ./core/scripts/run-tests.sh --url http://referrals.globant.dev --class "Drupal\globant_referral\Tests\GlobantReferralsTest"
