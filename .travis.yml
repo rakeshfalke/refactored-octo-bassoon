@@ -40,5 +40,9 @@ install:
   - ../bin/drush config-import --yes
 
 before_script:
+  # start a web server on port 8080, run in the background; wait for initialization
+  - drush runserver 127.0.0.1:8080 &
+  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+script:
 # navigate out of module directory to prevent blown stack by recursive module lookup
-  - php ./core/scripts/run-tests.sh --url http://referrals.globant.dev --class "Drupal\globant_referral\Tests\GlobantReferralsTest"
+  - php ./core/scripts/run-tests.sh --url http://127.0.0.1:8080 --class "Drupal\globant_referral\Tests\GlobantReferralsTest"
