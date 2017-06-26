@@ -7,7 +7,7 @@ dependencies:
     - node.type.referrals
     - taxonomy.vocabulary.candidate_status
   content:
-    - 'taxonomy_term:candidate_status:95a98d72-dfaa-42ab-933e-3564345e5752'
+    - 'taxonomy_term:candidate_status:ff7948dd-1bcc-482e-94fa-b23988bc48e5'
 _core:
   default_config_hash: CoWk79mbAJ-Gp5diDZM2chIT6ZxcYOiclzZTF2d-WcI
 id: node.referrals.field_candidate_status
@@ -20,7 +20,7 @@ required: true
 translatable: false
 default_value:
   -
-    target_uuid: 95a98d72-dfaa-42ab-933e-3564345e5752
+    target_uuid: ff7948dd-1bcc-482e-94fa-b23988bc48e5
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

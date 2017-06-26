@@ -65,6 +65,7 @@
  *   in different view modes.
  */
 #}
+{% set profile_status = (node.field_isactive.value)? 'profile-active' : 'profile-in-active' %}
 {%
   set classes = [
     node.bundle|clean_class,
@@ -73,6 +74,7 @@
     not node.isPublished() ? 'is-unpublished',
     view_mode ? view_mode|clean_class,
     'clearfix',
+    profile_status
   ]
 %}
 <article{{ attributes.addClass(classes) }}>

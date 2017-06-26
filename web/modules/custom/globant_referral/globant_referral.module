@@ -32,8 +32,11 @@ function globant_referral_help($route_name, RouteMatchInterface $route_match) {
  *
  */
 function globant_referral_node_insert(NodeInterface $node) {
+  $active_referral = NULL;
+
   if ($node->getType() === 'job_post') {
     $job_id = _globant_referral_get_job_id($node);
+
     $node->set('field_jp_job_id', $job_id);
     // Add keywords from skills and title
     $tids = [];
@@ -55,6 +58,23 @@ function globant_referral_node_insert(NodeInterface $node) {
     $node->set('field_keywords', $keywords);
     $node->setNewRevision(FALSE);
     $node->save();
+  }
+  if ($node->getType() === 'referrals') {
+    $candidate_email = $node->get('field_candidate_email')->getValue();
+    $tempstore = \Drupal::service('user.private_tempstore')->get('globant_referral');
+    $active_referral = $tempstore->get($candidate_email[0]['value']);
+    if ($active_referral) {
+      //unset store
+      $tempstore->set($candidate_email[0]['value'], NULL);
+      $node->field_active_referral[] = ['target_id' => $active_referral];
+      $node->setNewRevision(FALSE);
+      $node->save();
+      $node_referral = node_load($active_referral);
+      $node_referral->field_active_referral[] = ['target_id' => $node->id()];
+      $node_referral->set('field_isactive', 0);
+      $node_referral->setNewRevision(TRUE);
+      $node_referral->save();
+    }
   }
   /*  if ($node->getType() === 'referrals') {
       // Send mail to user
@@ -197,7 +217,7 @@ function globant_referral_referrals_validate(&$form, FormStateInterface $form_st
 
       $node_id = array_shift($nids);
       $node = node_load($node_id);
-
+      // strtotime("+7 months") $node->getCreatedTime()
       $date_created = date('d-m-Y', $node->getCreatedTime());
       $start_date = new DateTime($date_created);
       $end_date = new DateTime();
@@ -205,8 +225,9 @@ function globant_referral_referrals_validate(&$form, FormStateInterface $form_st
 
       if ($interval->m >= $months || $interval->y > 1) {
         // set in active and add new with active
-        $node->set('field_isactive', 0);
-        $node->save();
+        // store email id and node id to make node inactive.
+        $tempstore = \Drupal::service('user.private_tempstore')->get('globant_referral');
+        $tempstore->set($email_id, $node_id);
       }
       else {
         $error_message = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('error_message');
@@ -243,6 +264,7 @@ function globant_referral_node_access(NodeInterface $node, $op, AccountInterface
   $type = $node->bundle();
   // Add permission for only Not proccesed and not assinged
   if ($op == 'update' && $type == 'referrals') {
+
     $roles = $account->getRoles();
     $referral_status = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('referral_status');
     $tid = $node->get('field_candidate_status')->getValue()[0]['target_id'];
