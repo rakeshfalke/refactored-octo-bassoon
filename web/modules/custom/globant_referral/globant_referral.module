@@ -144,6 +144,7 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
 
       $form['#theme'] = 'referrals_form';
       $user_roles = \Drupal::currentUser()->getRoles();
+      $form['field_jp_job_id']['#disabled'] = TRUE;
       $form['field_candidate_status']['#access'] = FALSE;
       $form['field_isactive']['#access'] = FALSE;
       $form['field_referred_by']['#access'] = FALSE;
