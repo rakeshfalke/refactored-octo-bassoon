@@ -1,12 +1,13 @@
 uuid: 3fb1a29c-4225-49a7-af1b-aeafa3caac0e
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.referrals.body
     - field.field.node.referrals.field_assigned_to
     - field.field.node.referrals.field_candidate_cell
+    - field.field.node.referrals.field_candidate_cell_alternate
     - field.field.node.referrals.field_candidate_email
     - field.field.node.referrals.field_candidate_experience
     - field.field.node.referrals.field_candidate_location
@@ -40,6 +41,7 @@ content:
 hidden:
   field_assigned_to: true
   field_candidate_cell: true
+  field_candidate_cell_alternate: true
   field_candidate_email: true
   field_candidate_experience: true
   field_candidate_location: true

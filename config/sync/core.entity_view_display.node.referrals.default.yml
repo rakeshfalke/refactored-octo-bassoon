@@ -43,11 +43,11 @@ content:
     region: content
   field_assigned_to:
     type: entity_reference_label
-    weight: 8
+    weight: 9
     region: content
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   field_candidate_cell:
     weight: 5
@@ -58,7 +58,7 @@ content:
     type: string
     region: content
   field_candidate_cell_alternate:
-    weight: 12
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -92,14 +92,14 @@ content:
     type: string
     region: content
   field_candidate_resume:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
     region: content
   field_candidate_skype:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link_to_entity: false
@@ -108,15 +108,15 @@ content:
     region: content
   field_candidate_status:
     type: entity_reference_label
-    weight: 11
+    weight: 12
     region: content
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   field_isactive:
     type: boolean
-    weight: 10
+    weight: 11
     region: content
     label: above
     settings:
@@ -126,11 +126,11 @@ content:
     third_party_settings: {  }
   field_referred_by:
     type: entity_reference_label
-    weight: 9
+    weight: 10
     region: content
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   links:
     weight: 0
