@@ -1,0 +1,23 @@
+uuid: c7994e4b-d0cb-42ac-a34b-dedbf1aba8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notice_period
+    - node.type.referrals
+id: node.referrals.field_notice_period
+field_name: field_notice_period
+entity_type: node
+bundle: referrals
+label: 'Notice period'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: Day(s)
+field_type: integer

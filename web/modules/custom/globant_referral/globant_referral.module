@@ -141,11 +141,13 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
 
     case 'node_referrals_form':
     case 'node_referrals_edit_form':
-
+      //
       $form['#theme'] = 'referrals_form';
       $user_roles = \Drupal::currentUser()->getRoles();
       $form['field_jp_job_id']['#disabled'] = TRUE;
       $form['field_candidate_status']['#access'] = FALSE;
+      $form['field_active_referral']['#access'] = FALSE;
+      $form['field_notes']['#access'] = FALSE;
       $form['field_isactive']['#access'] = FALSE;
       $form['field_referred_by']['#access'] = FALSE;
       $form['field_assigned_to']['#access'] = FALSE;
@@ -159,6 +161,7 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
 
       if (array_intersect($roles, $user_roles)) {
         $form['field_candidate_status']['#access'] = TRUE;
+        $form['field_notes']['#access'] = TRUE;
         $form['field_isactive']['#access'] = TRUE;
         $form['field_assigned_to']['#access'] = TRUE;
         $form['field_referred_by']['#access'] = TRUE;

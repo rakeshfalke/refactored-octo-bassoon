@@ -15,10 +15,14 @@ dependencies:
     - field.field.node.referrals.field_candidate_skype
     - field.field.node.referrals.field_candidate_status
     - field.field.node.referrals.field_isactive
+    - field.field.node.referrals.field_linkedin_profile
+    - field.field.node.referrals.field_notes
+    - field.field.node.referrals.field_notice_period
     - field.field.node.referrals.field_referred_by
     - node.type.referrals
   module:
     - file
+    - link
     - panelizer
     - text
     - user
@@ -254,7 +258,7 @@ content:
     type: string
     region: content
   field_candidate_resume:
-    weight: 7
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -268,6 +272,27 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_linkedin_profile:
+    type: link
+    weight: 7
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_notice_period:
+    type: number_integer
+    weight: 8
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
@@ -278,4 +303,5 @@ hidden:
   field_candidate_cell_alternate: true
   field_candidate_status: true
   field_isactive: true
+  field_notes: true
   field_referred_by: true

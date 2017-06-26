@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.referrals.body
+    - field.field.node.referrals.field_active_referral
     - field.field.node.referrals.field_assigned_to
     - field.field.node.referrals.field_candidate_cell
     - field.field.node.referrals.field_candidate_cell_alternate
@@ -14,10 +15,14 @@ dependencies:
     - field.field.node.referrals.field_candidate_skype
     - field.field.node.referrals.field_candidate_status
     - field.field.node.referrals.field_isactive
+    - field.field.node.referrals.field_linkedin_profile
+    - field.field.node.referrals.field_notes
+    - field.field.node.referrals.field_notice_period
     - field.field.node.referrals.field_referred_by
     - node.type.referrals
   module:
     - file
+    - link
     - panelizer
     - text
     - user
@@ -40,6 +45,14 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_active_referral:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_assigned_to:
     type: entity_reference_label
@@ -124,6 +137,34 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
+  field_linkedin_profile:
+    weight: 14
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_notes:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_notice_period:
+    weight: 13
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_referred_by:
     type: entity_reference_label
     weight: 10

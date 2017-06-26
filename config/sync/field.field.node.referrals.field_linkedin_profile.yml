@@ -1,0 +1,23 @@
+uuid: fa2084b4-295e-4d28-9784-f81d614c7349
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin_profile
+    - node.type.referrals
+  module:
+    - link
+id: node.referrals.field_linkedin_profile
+field_name: field_linkedin_profile
+entity_type: node
+bundle: referrals
+label: 'Linkedin profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,19 @@
+uuid: 70438f91-02e3-4988-adfd-f319cec1d0fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.referrals
+id: node.referrals.field_notes
+field_name: field_notes
+entity_type: node
+bundle: referrals
+label: Notes
+description: 'Why do you think this person is a good fit for Globant?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
