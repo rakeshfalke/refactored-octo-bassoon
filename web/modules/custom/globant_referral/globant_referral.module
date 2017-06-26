@@ -65,11 +65,13 @@ function globant_referral_node_insert(NodeInterface $node) {
     $active_referral = $tempstore->get($candidate_email[0]['value']);
     if ($active_referral) {
       //unset store
+      $tempstore = \Drupal::service('user.private_tempstore')->get('globant_referral');
       $tempstore->set($candidate_email[0]['value'], NULL);
       $node->field_active_referral[] = ['target_id' => $active_referral];
       $node->setNewRevision(FALSE);
       $node->save();
-      $node_referral = node_load($active_referral);
+
+      $node_referral = \Drupal\node\Entity\Node::load($active_referral);
       $node_referral->field_active_referral[] = ['target_id' => $node->id()];
       $node_referral->set('field_isactive', 0);
       $node_referral->setNewRevision(TRUE);
@@ -137,7 +139,6 @@ function _globant_referral_get_job_id($node){
  *
  */
 function globant_referral_form_alter(&$form, FormStateInterface $form_state, $form_id){
-
    switch ($form_id) {
     case 'views_exposed_form':
       if ($form['#id'] == 'views-exposed-form-my-referrals-block-all-referrals') {
