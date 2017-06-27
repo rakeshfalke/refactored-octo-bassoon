@@ -78,7 +78,6 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-
   {{ title_prefix }}
   {% if not page %}
     <h2 class="dec-heading">
@@ -88,17 +87,16 @@
   {{ title_suffix }}
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info-card">
     {{ content.field_candidate_experience }}
-    {{ content.field_notice_period }}
     {{ content.field_candidate_email }}
     {{ content.field_candidate_cell }}
     {{ content.field_candidate_cell_alternate }}
-    {{ content.field_candidate_skype }}
     {{ content.field_linkedin_profile }}
-    {{ content.field_candidate_location }}
+    {{ content.field_notice_period }}
     {{ content.field_referred_by }}
-    {{ content.field_active_referral }}
   </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 info-desc">
+    {{ content.field_candidate_location }}
+    {{ content.field_candidate_skype }}
     {{ content.field_assigned_to }}
     {{ content.field_isactive }}
     {{ content.field_candidate_status }}

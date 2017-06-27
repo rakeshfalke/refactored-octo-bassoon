@@ -117,12 +117,14 @@
     {
         padding-left: 40px;
         padding-right: 40px;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.8;
+        /*font-weight: 600;*/
         .field--label
         {
         color: #92c41e;
         margin-top: 20px;
+        font-size: 20px;
         }
         .field--item
         {
@@ -134,6 +136,20 @@
         margin-top: 20px;
         }
 
-
+        .refer-btn-container{
+          margin-top: 30px;
+          .btn-refer
+          {
+            background-color: #ccd324;
+            border-color: #ccd324;
+            color: #fff;
+            &:hover
+            {
+              background-color: #b7bd20!important;
+              border-color: transparent;
+              color: #fff;
+            }
+          }
+        }
 
 }
