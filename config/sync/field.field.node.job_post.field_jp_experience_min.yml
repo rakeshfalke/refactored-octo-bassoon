@@ -15,11 +15,13 @@ label: 'Experience Min'
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 1
 default_value_callback: ''
 settings:
   min: null
   max: null
   prefix: ''
-  suffix: ''
+  suffix: Yrs
 field_type: integer

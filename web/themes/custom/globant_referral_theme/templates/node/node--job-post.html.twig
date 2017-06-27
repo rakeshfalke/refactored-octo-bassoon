@@ -85,14 +85,16 @@
   {% endif %}
   {{ title_suffix }}
 
+  {% set fields_top = ['field_jp_job_id', 'field_jp_experience_min', 'field_jp_experience_max', 'field_jp_must_have_skills', 'field_jp_good_to_have_skills','field_jp_location', 'field_jp_expires_on'] %}
+
   <div class="row info-card">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_job_id }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_experience_min }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_experience_max }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_must_have_skills }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_good_to_have_skills }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_location }}</div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_expires_on }}</div>
+    {% for field in fields_top %}
+    {% if attribute(content, field) |render %}
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        {{ attribute(content, field) }}
+      </div>
+    {% endif %}
+  {% endfor %}
     <!-- <div class="bottom">
       <a class="btn btn-primary btn-twitter btn-sm" href="#">
         <i class="fa fa-twitter"></i>
