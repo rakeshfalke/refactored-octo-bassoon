@@ -204,18 +204,19 @@ function globant_referral_referrals_validate(&$form, FormStateInterface $form_st
   $is_new_node = isset($node_obj)? FALSE : TRUE;
 
   $email_id = $form_state->getValue('field_candidate_email')[0]['value'];
-  $roles = ['recruiter_admin', 'recruiter', 'administrator' ];
+  $roles = ['recruiter_admin', 'recruiter', 'administrator'];
   $user_roles = \Drupal::currentUser()->getRoles();
 
   $candidate_status = $form_state->getValue('field_candidate_status')[0]['target_id'];
   $referral_status = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('referral_status');
   // Candidate status changed assing to login user
-  if (!$is_new_node && array_intersect($roles, $user_roles)) {
+  $admin_roles = ['recruiter_admin', 'administrator'];
+  if (!$is_new_node && !array_intersect($admin_roles, $user_roles)) {
     $user_id = \Drupal::currentUser()->id();
     $form_state->setValue('field_assigned_to', [0 => ['target_id' => $user_id]]);
   }
 
-  if ($email_id && (array_intersect($roles, $user_roles) && $is_new_node)) {
+  if ($email_id &&  (array_intersect($roles, $user_roles) && $is_new_node)) {
     $nids = \Drupal::entityQuery('node')
       ->condition('type', 'referrals')
       ->condition('status', 1)
