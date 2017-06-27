@@ -1,3 +1,6 @@
 administer globantuser:
+  title: 'View globant user'
+  description: 'View globant user.'
+administer globantedituser:
   title: 'Administer globant user'
   description: 'Administer globant user settings.'

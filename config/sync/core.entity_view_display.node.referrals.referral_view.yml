@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.referral_view
     - field.field.node.referrals.body
+    - field.field.node.referrals.field_active_referral
     - field.field.node.referrals.field_assigned_to
     - field.field.node.referrals.field_candidate_cell
     - field.field.node.referrals.field_candidate_cell_alternate
@@ -231,6 +232,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_candidate_cell_alternate:
+    type: string
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_candidate_email:
     weight: 4
     label: above
@@ -272,6 +281,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_candidate_status:
+    type: entity_reference_label
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
   field_linkedin_profile:
     type: link
     weight: 7
@@ -299,9 +316,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_active_referral: true
   field_assigned_to: true
-  field_candidate_cell_alternate: true
-  field_candidate_status: true
   field_isactive: true
   field_notes: true
   field_referred_by: true

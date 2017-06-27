@@ -187,10 +187,12 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
         $form['field_assigned_to']['#access'] = TRUE;
         $form['field_referred_by']['#access'] = TRUE;
         $form['field_referred_by']['#disabled'] = TRUE;
+        /* disable also for admin
         if (in_array('recruiter_admin', $user_roles)) {
           $form['field_referred_by']['#disabled'] = FALSE;
           $form['field_candidate_email']['#disabled'] = FALSE;
         }
+        */
       }
       $form['#validate'][] = 'globant_referral_referrals_validate';
     break;
@@ -301,7 +303,10 @@ function globant_referral_node_access(NodeInterface $node, $op, AccountInterface
  * Implements hook_ENTITY_TYPE_access() for entity type "user".
  */
 function globant_referral_user_access(User $entity, $op, AccountInterface $account) {
-  if ($account->hasPermission('administer globantuser')) {
+  if ($account->hasPermission('administer globantedituser')) {
+    return AccessResult::allowed();
+  }
+  if ($op == 'view label' && $account->hasPermission('administer globantuser')) {
     return AccessResult::allowed();
   }
   return AccessResult::forbidden();

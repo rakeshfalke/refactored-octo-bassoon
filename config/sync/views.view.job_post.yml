@@ -95,7 +95,6 @@ display:
             field_jp_experience_max: field_jp_experience_max
             field_jp_location: field_jp_location
             nid: nid
-            moderation_state: moderation_state
             edit_node: edit_node
           info:
             field_jp_job_id:
@@ -143,13 +142,6 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            moderation_state:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             edit_node:
               sortable: false
               default_sort_order: asc
@@ -157,7 +149,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          default: '-1'
+          default: title
           empty_table: false
       row:
         type: fields

@@ -11,4 +11,5 @@ id: recruiter
 label: Recruiter
 weight: 12
 is_admin: null
-permissions: {  }
+permissions:
+  - 'administer globantuser'

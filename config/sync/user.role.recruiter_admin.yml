@@ -12,6 +12,7 @@ label: 'Recruiter Admin'
 weight: 11
 is_admin: null
 permissions:
+  - 'administer globantedituser'
   - 'administer globantuser'
   - 'administer permissions'
   - 'administer users'

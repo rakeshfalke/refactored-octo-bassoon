@@ -88,10 +88,10 @@ display:
           columns:
             nid: nid
             title: title
-            field_candidate_location: field_candidate_location
-            created: created
+            field_referred_by: field_referred_by
             field_candidate_status: field_candidate_status
-            view_node: view_node
+            field_assigned_to: field_assigned_to
+            edit_node: edit_node
           info:
             nid:
               sortable: true
@@ -107,15 +107,8 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_candidate_location:
+            field_referred_by:
               sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            created:
-              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -128,14 +121,21 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            view_node:
+            field_assigned_to:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-          default: '-1'
+            edit_node:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: title
           empty_table: false
       row:
         type: fields
@@ -753,14 +753,14 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: NA
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1634,7 +1634,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
