@@ -48,7 +48,7 @@ function globant_referral_node_insert(NodeInterface $node) {
     $skills_terms = taxonomy_term_load_multiple($tids);
     foreach ($skills_terms as $term) {
       $skill_code = $term->getName();
-      if (!in_array($skill_code, $code)) {
+      if (!in_array($skill_code, $skills)) {
         $skills[] = $skill_code;
       }
     }
