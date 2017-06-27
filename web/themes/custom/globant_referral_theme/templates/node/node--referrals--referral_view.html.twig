@@ -85,22 +85,32 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info-card">
-    {{ content.field_candidate_experience }}
-    {{ content.field_candidate_email }}
-    {{ content.field_candidate_cell }}
-    {{ content.field_candidate_cell_alternate }}
-    {{ content.field_linkedin_profile }}
-    {{ content.field_notice_period }}
-    {{ content.field_referred_by }}
+  {% set fields_top = ['field_candidate_experience', 'field_candidate_email', 'field_candidate_email', 'field_candidate_cell', 'field_candidate_cell_alternate', 'field_linkedin_profile', 'field_notice_period', 'field_referred_by'] %}
+
+  {% set fields_bottop = ['field_candidate_location', 'field_candidate_skype', 'field_assigned_to', 'field_isactive', 'field_candidate_status', 'field_candidate_resume'] %}
+
+
+  <div class="row info-card">
+  {% for field in fields_top %}
+    {% if attribute(content, field) |render %}
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        {{ attribute(content, field) }}
+      </div>
+    {% endif %}
+  {% endfor %}
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 info-desc">
-    {{ content.field_candidate_location }}
-    {{ content.field_candidate_skype }}
-    {{ content.field_assigned_to }}
-    {{ content.field_isactive }}
-    {{ content.field_candidate_status }}
-    {{ content.field_candidate_resume }}
-    {{ content.field_notes }}
+  <div class="row info-desc">
+    {% for field in fields_bottop %}
+      {% if attribute(content, field) |render %}
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          {{ attribute(content, field) }}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if content.field_notes |render %}
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {{ content.field_notes }}
+      </div>
+    {% endif %}
   </div>
 </article>

@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup templates
+ */
+#}
+{% if breadcrumb %}
+  <ol class="breadcrumb">
+    <li {{ item.attributes }}>
+      <a href="#" onclick="window.history.back();return false;">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back
+      </a>
+    </li>
+  </ol>
+{% endif %}
+
+

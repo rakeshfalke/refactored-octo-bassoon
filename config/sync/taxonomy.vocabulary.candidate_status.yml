@@ -6,6 +6,6 @@ _core:
   default_config_hash: DwTP0F_X93iIov5zOpiXi5Y7Y6vaTGNCWDX0UwaJInw
 name: 'Candidate Status'
 vid: candidate_status
-description: ''
+description: 'Referral Candidate Status'
 hierarchy: 0
 weight: 0

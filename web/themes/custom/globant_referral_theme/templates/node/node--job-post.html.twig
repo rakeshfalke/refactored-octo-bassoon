@@ -85,15 +85,15 @@
   {% endif %}
   {{ title_suffix }}
 
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info-card">
-    {{ content.field_jp_job_id }}
-    {{ content.field_jp_experience_min }}
-    {{ content.field_jp_experience_max }}
-    {{ content.field_jp_must_have_skills }}
-    {{ content.field_jp_good_to_have_skills }}
-    {{ content.field_jp_location }}
-    {{ content.field_jp_expires_on }}
-    <div class="bottom">
+  <div class="row info-card">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_job_id }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_experience_min }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_experience_max }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_must_have_skills }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_good_to_have_skills }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_location }}</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{{ content.field_jp_expires_on }}</div>
+    <!-- <div class="bottom">
       <a class="btn btn-primary btn-twitter btn-sm" href="#">
         <i class="fa fa-twitter"></i>
       </a>
@@ -106,12 +106,12 @@
       <a class="btn btn-warning btn-sm" rel="publisher" href="#">
         <i class="fa fa-behance"></i>
       </a>
-    </div>
+    </div>-->
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 info-desc">
-  {{ content.body }}
-  {{ content.field_jp_special_notes }}
-    <div class="refer-btn-container">
+  <div class="row info-desc">
+  <div class="col-sm-6 col-xs-12">{{ content.body }}</div>
+  <div class="col-sm-6 col-xs-12">{{ content.field_jp_special_notes }}</div>
+    <div class="refer-btn-container col-xs-12">
       <a class="btn btn-refer btn-lg" rel="publisher" href="/add-referral">
         Refer
       </a>

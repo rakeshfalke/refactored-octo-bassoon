@@ -5,18 +5,19 @@ dependencies:
   module:
     - node
 id: job_post
-label: 'job post'
+label: 'Referral Portal contents'
 type: 'canonical_entities:node'
-pattern: '[node:original:content-type]/[node:nid]'
+pattern: '[node:content-type]/[node:nid]'
 selection_criteria:
-  01c8f19a-ec57-4503-b90a-3c48302181bd:
+  76ccf4bc-9774-4fa1-93b6-0e1667f4656a:
     id: node_type
     bundles:
       job_post: job_post
+      referrals: referrals
     negate: false
     context_mapping:
       node: node
-    uuid: 01c8f19a-ec57-4503-b90a-3c48302181bd
+    uuid: 76ccf4bc-9774-4fa1-93b6-0e1667f4656a
 selection_logic: and
 weight: -5
 relationships: {  }

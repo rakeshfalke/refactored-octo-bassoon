@@ -68,25 +68,25 @@
     }
     .dec-heading
     {
-        text-align: center;
+        text-align: left;
         margin-bottom: 50px;
-        color: #92c41e;
-        font-size: 40px;
+        color: #000000;
+        font-size: 28px;
         font-weight: bold;
         span
         {
-           color: #92c41e;
+           color: #000000;
            text-decoration: none;
            text-transform: uppercase;
         }
     }
 
     .info-card{
-        background: #eaeaea;
-        padding: 20px;
-        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
+        border-bottom: 1px dotted #ccc;
+        /*padding: 20px;*/
+    /*    -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
         -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
-        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.33);*/
         margin-bottom: 50px;
         .field--label
         {
@@ -103,10 +103,10 @@
 
 
         }
-        .field--label-above
+        .field
         {
-        border-bottom: 1px dotted #ccc;
-        margin-bottom: 15px
+
+         margin-bottom: 30px
         }
         .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
         }
@@ -115,15 +115,20 @@
 
     .info-desc
     {
-        padding-left: 40px;
-        padding-right: 40px;
+        /*padding-left: 40px;
+        padding-right: 40px;*/
         font-size: 16px;
         line-height: 1.8;
+
         /*font-weight: 600;*/
+        .field
+        {
+          margin-bottom: 30px;
+        }
         .field--label
         {
         color: #92c41e;
-        margin-top: 20px;
+        /*margin-top: 20px;*/
         font-size: 20px;
         }
         .field--item
@@ -152,4 +157,14 @@
           }
         }
 
+}
+  .rights-reserved {
+    text-align: right;
+     @media #{$mobile} {
+      text-align: left;
+    }
+  }
+
+.google-logo-icon {
+   border-radius: 50%; width:32px; height:32px; line-height:18px;
 }
