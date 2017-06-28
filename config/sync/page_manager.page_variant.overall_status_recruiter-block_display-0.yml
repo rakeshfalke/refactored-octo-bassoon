@@ -1,0 +1,32 @@
+uuid: 9cda918d-654f-445d-9757-b2fe7d0e24e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.overall_status_recruiter
+  module:
+    - globant_referral
+id: overall_status_recruiter-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    c5af1380-a640-4c92-815d-cd66a893ce7c:
+      id: overall_status
+      label: 'Overall status report block'
+      provider: globant_referral
+      label_display: visible
+      region: top
+      weight: 0
+      uuid: c5af1380-a640-4c92-815d-cd66a893ce7c
+      context_mapping: {  }
+  id: block_display
+  uuid: 374b4d11-1662-4071-be2b-057774f20afd
+  label: null
+  weight: 0
+  page_title: ''
+page: overall_status_recruiter
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

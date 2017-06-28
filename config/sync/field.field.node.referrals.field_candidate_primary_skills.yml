@@ -1,0 +1,28 @@
+uuid: bc94bf4e-3722-424f-baef-21a2b1725eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_primary_skills
+    - node.type.referrals
+    - taxonomy.vocabulary.candidate_skills
+id: node.referrals.field_candidate_primary_skills
+field_name: field_candidate_primary_skills
+entity_type: node
+bundle: referrals
+label: 'Candidate primary skills'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      candidate_skills: candidate_skills
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

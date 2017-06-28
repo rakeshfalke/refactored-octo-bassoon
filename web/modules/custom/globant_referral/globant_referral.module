@@ -264,7 +264,7 @@ function _globant_referral_get_user($roles = ['recruiter']){
   foreach ($users as $user) {
     $name = $user->getUsername();
     if ($uid == $user->id()) {
-      $name = t('Me');
+      $name = t('Myself');
     }
     $options[$user->id()] = $name;
   }

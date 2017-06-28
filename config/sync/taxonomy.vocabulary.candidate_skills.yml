@@ -1,0 +1,9 @@
+uuid: f139ea6f-8878-4f2d-b760-1ea1f36cb516
+langcode: en
+status: true
+dependencies: {  }
+name: 'Candidate Skills'
+vid: candidate_skills
+description: 'Candidate Skills'
+hierarchy: 0
+weight: 0

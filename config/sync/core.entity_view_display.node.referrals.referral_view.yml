@@ -12,7 +12,9 @@ dependencies:
     - field.field.node.referrals.field_candidate_email
     - field.field.node.referrals.field_candidate_experience
     - field.field.node.referrals.field_candidate_location
+    - field.field.node.referrals.field_candidate_primary_skills
     - field.field.node.referrals.field_candidate_resume
+    - field.field.node.referrals.field_candidate_secondary_skills
     - field.field.node.referrals.field_candidate_skype
     - field.field.node.referrals.field_candidate_status
     - field.field.node.referrals.field_isactive
@@ -266,6 +268,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_candidate_primary_skills:
+    type: entity_reference_label
+    weight: 12
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   field_candidate_resume:
     weight: 9
     label: above
@@ -273,6 +283,14 @@ content:
     third_party_settings: {  }
     type: file_default
     region: content
+  field_candidate_secondary_skills:
+    type: entity_reference_label
+    weight: 13
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   field_candidate_skype:
     weight: 6
     label: above

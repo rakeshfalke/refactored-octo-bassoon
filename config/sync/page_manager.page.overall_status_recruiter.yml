@@ -1,0 +1,23 @@
+uuid: 9a78f7b4-c24b-496b-a58a-024fcb607482
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: overall_status_recruiter
+label: 'Overall Status By Recruiter'
+description: 'Overall Status By Recruiter'
+use_admin_theme: false
+path: /overall-status
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    roles:
+      administrator: administrator
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+parameters: {  }
