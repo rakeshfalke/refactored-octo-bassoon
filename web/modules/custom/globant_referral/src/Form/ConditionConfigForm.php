@@ -92,10 +92,7 @@ class ConditionConfigForm extends ConfigFormBase {
    */
   protected function getOptions($name = NULL, $vid = NULL) {
     $options = [];
-    $query = \Drupal::entityQuery('taxonomy_term');
-    $query->condition('vid', "candidate_status");
-    $tids = $query->execute();
-    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    $terms = \Drupal::service('globant_referral.services')->getVocabularyTerms("candidate_status");
     foreach ($terms as $term) {
       $options[$term->id()] = t('%name', array('%name' => $term->getName()));
     }

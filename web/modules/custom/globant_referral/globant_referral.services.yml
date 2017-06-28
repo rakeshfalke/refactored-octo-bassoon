@@ -3,3 +3,6 @@ services:
     class: Drupal\globant_referral\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  globant_referral.services:
+    class: Drupal\globant_referral\Services\CommonHelperServices
+    arguments: []

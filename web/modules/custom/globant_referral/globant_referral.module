@@ -218,12 +218,8 @@ function globant_referral_referrals_validate(&$form, FormStateInterface $form_st
   }
 
   if ($email_id && $is_new_node) {
-    $nids = \Drupal::entityQuery('node')
-      ->condition('type', 'referrals')
-      ->condition('status', 1)
-      ->condition('field_candidate_email', $email_id)
-      ->condition('field_isactive', 1)
-      ->execute();
+    $nids = \Drupal::service('globant_referral.services')
+    ->getActiveReferralByEmail($email_id);
 
     if (!empty($nids)) {
       $months = \Drupal::configFactory()->getEditable('globant_referral.settings')->get('before_month');
