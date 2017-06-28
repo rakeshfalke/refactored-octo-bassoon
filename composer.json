@@ -26,11 +26,12 @@
         "acquia/lightning": "~2.1.0",
         "drupal/social_auth_google": "^1.0@beta",
         "drupal/console": "~1.0",
-        "drupal/address": "~1.0",
         "drupal/admin_toolbar": "^1.19",
         "drupal/devel": "^1.0@RC",
         "drupal/bootstrap": "^3.5",
-        "drupal/registration_role": "^1.0@alpha"
+        "drupal/registration_role": "^1.0@alpha",
+        "drupal/migrate_tools": "^2.0",
+        "drupal/migrate_source_csv": "^2.0"
     },
     "repositories": [
         {
