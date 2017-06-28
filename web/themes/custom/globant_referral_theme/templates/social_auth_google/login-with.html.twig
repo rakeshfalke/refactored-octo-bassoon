@@ -3,7 +3,10 @@
 {{ attach_library('social_auth/auth-icons') }}
 
 {% for social_network in social_networks %}
-  <a class="{{ module }} auth-link google-logo-icon btn btn-danger btn-sm" href="{{ path(social_network.route) }}">
-    <i class="fa fa-google"></i>
-  </a>
+  <span class="google-logo-icon">
+    Sign in with Google
+    <a class="{{ module }} auth-link" href="{{ path(social_network.route) }}">
+      <img class="{{ module }} auth-icon" src="themes/custom/globant_referral_theme/images/g-logo.png" alt="login with google">
+    </a>
+  </span>
 {% endfor %}
