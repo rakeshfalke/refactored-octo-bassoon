@@ -23,8 +23,8 @@ class CommonHelperServices {
       $query->condition('vid', $vocab);
       if ($pager) {
         $query->pager(10);
+        $query->sort('name', $sort);
       }
-      $query->sort('name', $sort);
       $tids = $query->execute();
       $terms = Term::loadMultiple($tids);
     }
@@ -48,9 +48,9 @@ class CommonHelperServices {
           ->condition('status', 1)
           ->condition('field_assigned_to', $user->id())
           ->condition('field_candidate_status', $term->id())
-          ->condition('field_isactive', 1)
+          ->condition('field_isactive', 1)->count()
           ->execute();
-        $row[] = count($nids);
+        $row[] = $nids;
       }
       $row_key = 'recruiter-' . $user->id();
       $rows[$row_key] = $row;
@@ -75,9 +75,9 @@ class CommonHelperServices {
           ->condition('status', 1)
           ->condition('field_candidate_primary_skills', $skill->id())
           ->condition('field_candidate_status', $term->id())
-          ->condition('field_isactive', 1)
+          ->condition('field_isactive', 1)->count()
           ->execute();
-        $row[] = count($nids);
+        $row[] = $nids;
       }
       $row_key = 'skill-' . $skill->id();
       $rows[$row_key] = $row;

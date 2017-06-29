@@ -47,7 +47,7 @@ class ReportOverallStatusBlock extends BlockBase implements BlockPluginInterface
   protected function getReportData() {
     $config = $this->getConfiguration();
     $header_name = t('@report_by', array('@report_by' => ucfirst($config['report_by'])));
-    $this->_headers[] = ['data' => $header_name, 'field' => 'name', 'sort' => 'DESC'];
+    $this->_headers[] = ['data' => $header_name, 'field' => 'name', 'sort' => 'desc'];
     $terms = \Drupal::service('globant_referral.services')->getVocabularyTerms("candidate_status");
     if ($config['report_by'] == 'recruiter') {
       $this->_rows = \Drupal::service('globant_referral.services')
