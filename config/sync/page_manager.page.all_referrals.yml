@@ -16,6 +16,7 @@ access_conditions:
   -
     id: user_role
     roles:
+      administrator: administrator
       recruiter_admin: recruiter_admin
       recruiter: recruiter
     negate: false

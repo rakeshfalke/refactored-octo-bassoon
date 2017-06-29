@@ -1,0 +1,35 @@
+uuid: 667d9727-07af-4920-88f5-3d6cbda2bf6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.report_overdue
+    - views.view.reports
+  module:
+    - views
+id: report_overdue-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    53510640-7534-420e-83c8-34ce152d40ad:
+      id: 'views_block:reports-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 53510640-7534-420e-83c8-34ce152d40ad
+      context_mapping: {  }
+  id: block_display
+  uuid: 217ec2e4-a190-4c3a-80d0-ef073128ab03
+  label: null
+  weight: 0
+  page_title: ''
+page: report_overdue
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

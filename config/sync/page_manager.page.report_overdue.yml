@@ -1,21 +1,20 @@
-uuid: 9a78f7b4-c24b-496b-a58a-024fcb607482
+uuid: f0ce49a2-b2c4-4c07-be0e-bb6043be6dac
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: overall_status_recruiter
-label: 'Overall Status By Recruiter'
-description: 'Overall Status By Recruiter'
+id: report_overdue
+label: 'Report Overdue'
+description: 'Report Overdue'
 use_admin_theme: false
-path: /overall-status-recruiter
+path: /overdue-report
 access_logic: and
 access_conditions:
   -
     id: user_role
     roles:
       administrator: administrator
-      recruiter_admin: recruiter_admin
       recruiter: recruiter
     negate: false
     context_mapping:

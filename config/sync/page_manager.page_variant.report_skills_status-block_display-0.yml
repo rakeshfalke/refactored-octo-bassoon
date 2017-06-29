@@ -1,32 +1,32 @@
-uuid: 9cda918d-654f-445d-9757-b2fe7d0e24e8
+uuid: 98577000-e445-45c3-b736-c7f5009c741c
 langcode: en
 status: true
 dependencies:
   config:
-    - page_manager.page.overall_status_recruiter
+    - page_manager.page.report_skills_status
   module:
     - globant_referral
-id: overall_status_recruiter-block_display-0
+id: report_skills_status-block_display-0
 label: 'Block page'
 variant: block_display
 variant_settings:
   blocks:
-    c5af1380-a640-4c92-815d-cd66a893ce7c:
+    7a9368d5-7663-4475-a26f-e88a5674b02e:
       id: overall_status
-      label: 'Report: Overall Status By Recruiter'
+      label: 'Report: Overall Status By Skills'
       provider: globant_referral
       label_display: visible
       region: top
       weight: 0
-      uuid: c5af1380-a640-4c92-815d-cd66a893ce7c
+      uuid: 7a9368d5-7663-4475-a26f-e88a5674b02e
+      report_by: skills
       context_mapping: {  }
-      report_by: recruiter
   id: block_display
-  uuid: 374b4d11-1662-4071-be2b-057774f20afd
+  uuid: 4f947842-b102-4cbc-bf1b-9331df22e181
   label: null
   weight: 0
   page_title: ''
-page: overall_status_recruiter
+page: report_skills_status
 weight: 0
 selection_criteria: {  }
 selection_logic: and
