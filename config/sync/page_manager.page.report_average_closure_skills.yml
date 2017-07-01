@@ -1,0 +1,23 @@
+uuid: fbceac72-53ac-48ba-9570-b4c0e8ef4adc
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: report_average_closure_skills
+label: 'Report Average Closure Skills'
+description: 'Report Average Closure Skills'
+use_admin_theme: false
+path: /average-closure-skills
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    roles:
+      administrator: administrator
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+parameters: {  }

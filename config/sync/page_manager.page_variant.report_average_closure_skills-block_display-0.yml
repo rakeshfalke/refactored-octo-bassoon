@@ -1,0 +1,33 @@
+uuid: 6573d198-298c-411f-a067-238c40e54121
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.report_average_closure_skills
+  module:
+    - globant_referral
+id: report_average_closure_skills-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    650b8cb1-8ae3-4fcb-af99-ba965744f765:
+      id: average_closure
+      label: 'Report: Average Closure By Skills'
+      provider: globant_referral
+      label_display: visible
+      region: top
+      weight: 0
+      uuid: 650b8cb1-8ae3-4fcb-af99-ba965744f765
+      report_by: skills
+      context_mapping: {  }
+  id: block_display
+  uuid: 7504e7a0-5b9c-471a-8333-d5d71a55afe6
+  label: null
+  weight: 0
+  page_title: ''
+page: report_average_closure_skills
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

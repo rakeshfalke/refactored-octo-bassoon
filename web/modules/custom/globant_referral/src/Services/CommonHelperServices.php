@@ -7,6 +7,7 @@
  */
 namespace Drupal\globant_referral\Services;
 use Drupal\taxonomy\Entity\Term;
+use \DateTime;
 
 class CommonHelperServices {
  /*
@@ -101,6 +102,92 @@ class CommonHelperServices {
     return $nids;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getAverageClosureForRecruiter() {
+    $users = $this->getUserByRoles(['recruiter'], TRUE);
+    $status = $this->getVocabularyTerms('candidate_status');
+    $closure_skills = [];
+
+    foreach ($status as $term) {
+      if ($term->field_bucket->value == 'closure') {
+        $closure_terms[] = $term->id();
+      }
+    }
+
+    foreach ($users as $user) {
+      $row_key = 'skill-' . $user->id();
+      $rows[$row_key][] = $user->getUsername();
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', 'referrals')
+        ->condition('status', 1)
+        ->condition('field_assigned_to', $user->id())
+        ->condition('field_candidate_status', $closure_terms, 'IN')
+        ->condition('field_isactive', 1)
+        ->execute();
+      if (!empty($nids)) {
+        $records =  node_load_multiple(array_values($nids));
+        $average_closure = $this->getAverageClosureNode($records);
+        $rows[$row_key][] = $average_closure;
+      }
+      else {
+        $rows[$row_key][] = 0;
+      }
+    }
+    return $rows;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getAverageClosureForSkill() {
+    $skills = $this->getVocabularyTerms('candidate_skills', TRUE);
+    $status = $this->getVocabularyTerms('candidate_status');
+    $closure_skills = [];
+
+    foreach ($status as $term) {
+      if ($term->field_bucket->value == 'closure') {
+        $closure_terms[] = $term->id();
+      }
+    }
+
+    foreach ($skills as $skill) {
+      $row_key = 'skill-' . $skill->id();
+      $rows[$row_key][] = $skill->getName();
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', 'referrals')
+        ->condition('status', 1)
+        ->condition('field_candidate_primary_skills', $skill->id())
+        ->condition('field_candidate_status', $closure_terms, 'IN')
+        ->condition('field_isactive', 1)
+        ->execute();
+      if (!empty($nids)) {
+        $records =  node_load_multiple(array_values($nids));
+        $average_closure = $this->getAverageClosureNode($records);
+        $rows[$row_key][] = $average_closure;
+      }
+      else {
+        $rows[$row_key][] = 0;
+      }
+    }
+    return $rows;
+  }
+  /**
+   * Get Average Closure for nodes.
+   */
+  public function getAverageClosureNode($records) {
+    $average_closure = [];
+    foreach ($records as $record) {
+      $date_created = date('d-m-Y', $record->getCreatedTime());
+      $date_changed = date('d-m-Y', $record->getChangedTime());
+      $start_date = new DateTime($date_created);
+      $end_date = new DateTime($date_changed);
+      $interval = $end_date->diff($start_date);
+      $average_closure[] = $interval->d;
+    }
+    return array_sum($average_closure)/count($average_closure);
+  }
   /**
    * Get user by roles array.
    */

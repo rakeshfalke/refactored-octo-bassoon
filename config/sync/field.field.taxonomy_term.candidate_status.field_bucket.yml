@@ -1,0 +1,21 @@
+uuid: ec38ed1f-cc19-420b-ba87-98cb5dcc2590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_bucket
+    - taxonomy.vocabulary.candidate_status
+  module:
+    - options
+id: taxonomy_term.candidate_status.field_bucket
+field_name: field_bucket
+entity_type: taxonomy_term
+bundle: candidate_status
+label: Bucket
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

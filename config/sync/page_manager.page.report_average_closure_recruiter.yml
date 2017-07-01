@@ -1,0 +1,23 @@
+uuid: f9695141-1f21-4058-be32-bb95f669ccd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: report_average_closure_recruiter
+label: 'Report Average Closure Recruiter'
+description: 'Report Average Closure Recruiter'
+use_admin_theme: false
+path: /average-closure-recruiter
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    roles:
+      authenticated: authenticated
+      recruiter_admin: recruiter_admin
+      recruiter: recruiter
+    negate: false
+    context_mapping:
+      user: current_user
+parameters: {  }

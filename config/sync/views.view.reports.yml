@@ -50,10 +50,15 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 5
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -62,11 +67,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
           quantity: 9
       style:
         type: table
@@ -213,26 +213,41 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '>='
+          operator: '<='
           value:
             min: ''
             max: ''
-            value: '+1 month'
+            value: '-1 month'
             type: offset
           group: 1
           exposed: false
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: changed_op
+            label: Changed
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: changed_op
+            identifier: changed
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              page_creator: '0'
+              layout_manager: '0'
+              page_reviewer: '0'
+              landing_page_creator: '0'
+              landing_page_reviewer: '0'
+              media_creator: '0'
+              media_manager: '0'
+              job_post_creator: '0'
+              job_post_reviewer: '0'
+              referrals_creator: '0'
+              referrals_reviewer: '0'
+              recruiter_admin: '0'
+              recruiter: '0'
           is_grouped: false
           group_info:
             label: ''

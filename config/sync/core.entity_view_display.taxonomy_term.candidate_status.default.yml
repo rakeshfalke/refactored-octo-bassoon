@@ -1,0 +1,30 @@
+uuid: b96ef681-0648-4d37-8c4b-146970d60ab8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.candidate_status.field_bucket
+    - taxonomy.vocabulary.candidate_status
+  module:
+    - options
+    - text
+id: taxonomy_term.candidate_status.default
+targetEntityType: taxonomy_term
+bundle: candidate_status
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bucket:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

@@ -1,0 +1,33 @@
+uuid: 036546f0-db2c-4902-8bf2-d90891325a81
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.report_average_closure_recruiter
+  module:
+    - globant_referral
+id: report_average_closure_recruiter-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    91cd6f46-9bf8-4135-83d3-3f8d47ccc6db:
+      id: average_closure
+      label: 'Report: Average Closure By Recruiter/Skills'
+      provider: globant_referral
+      label_display: visible
+      region: top
+      weight: 0
+      uuid: 91cd6f46-9bf8-4135-83d3-3f8d47ccc6db
+      report_by: recruiter
+      context_mapping: {  }
+  id: block_display
+  uuid: 4b90a4b1-5fd4-4ea4-8fe9-3812eff463ab
+  label: null
+  weight: 0
+  page_title: ''
+page: report_average_closure_recruiter
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
