@@ -1,0 +1,15 @@
+name: Referral Migrate
+type: module
+description:  Module for performing site-specific migrations
+package: Globant Custom
+core: 8.x
+config: referral_migrate.migrate
+
+# Dependencies
+dependencies:
+  - migrate
+  - migrate_source_csv
+  - migrate_plus
+  - migrate_tools
+  - node
+  - taxonomy

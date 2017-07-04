@@ -1,0 +1,58 @@
+uuid: 8ca9a178-602f-4669-b5ef-d51110e06433
+langcode: en
+status: true
+dependencies: {  }
+id: referrals
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import referrals'
+source:
+  plugin: csv
+  path: /var/www/sites/referrals/web/sites/default/files/import/referrals_migration.csv
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - id
+  fields:
+    skills: Skills
+    created: Timestamp
+    body: 'Email Address'
+    name: 'Referrals Name'
+    location: 'Referral Location'
+    skils: Skills
+    experience: 'Referral Experience'
+    cell: 'Referral Contact'
+    notice: 'Notice Period'
+    notes: Notes
+    remail: 'Email Referral'
+process:
+  title: 'Referrals Name'
+  field_candidate_cell: 'Referral Contact'
+  field_candidate_email: 'Email Address'
+  field_candidate_experience: 'Referral Experience'
+  field_candidate_location: 'Referral Location'
+  field_candidate_primary_skills/target_id:
+    plugin: name_to_skill_id
+    source: Skills
+  field_candidate_secondary_skills/target_id:
+    plugin: name_to_skill_id
+    source: Skills
+  field_notice_period/value:
+    plugin: notice_period_string_to_number
+    source: 'Notice Period'
+  field_notes/value:
+    plugin: other_referral_values
+    source:
+      - Notes
+      - 'Email Referral'
+  uid: 1
+  type:
+    plugin: default_value
+    default_value: referrals
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

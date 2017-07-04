@@ -73,6 +73,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  referral_migrate: 0
   registration_role: 0
   scheduled_updates: 0
   search: 0

@@ -1,0 +1,75 @@
+  id: referrals
+  label: Import referrals
+  migration_groups:
+    - Referrals import
+
+  source:
+    plugin: csv
+    # Full path to the file.
+    path: '/var/www/sites/referrals/web/sites/default/files/import/referrals_migration.csv'
+    # Column delimiter. Comma (,) by default.
+    delimiter: ','
+    # Field enclosure. Double quotation marks (") by default.
+    enclosure: '"'
+    # The number of rows at the beginning which are not data.
+    header_row_count: 1
+    keys:
+      - id
+    # Here we identify the columns of interest in the source file.
+    # Each numeric key is the 0-based index of the column.
+    # For each column, the key below is the field name assigned to
+    # the data on import, to be used in field mappings below.
+    # The value is a user-friendly string for display by the
+    # migration UI.
+    fields:
+      skills: 'Skills'
+      created: 'Timestamp'
+      body: 'Email Address'
+      name: 'Referrals Name'
+      location: 'Referral Location'
+      skils: 'Skills'
+      experience: 'Referral Experience'
+      cell: 'Referral Contact'
+      notice: 'Notice Period'
+      notes: 'Notes'
+      remail: 'Email Referral'
+    # We can assign hard-coded values to certain properties using constants.
+  constants:
+    uid_root: 1
+
+  destination:
+    plugin: entity:node
+
+  process:
+    title: 'Referrals Name'
+    # field_active_referral:
+    # field_assigned_to:
+    field_candidate_cell: 'Referral Contact'
+    # field_candidate_cell_alternate:
+    field_candidate_email: 'Email Address'
+    field_candidate_experience: 'Referral Experience'
+    field_candidate_location: 'Referral Location'
+    field_candidate_primary_skills/target_id:
+      plugin: name_to_skill_id
+      source: 'Skills'
+    # field_candidate_resume:
+    field_candidate_secondary_skills/target_id:
+      plugin: name_to_skill_id
+      source: 'Skills'
+    # field_candidate_skype:
+    # field_candidate_status:
+    # field_isactive:
+    # field_linkedin_profile:
+    field_notice_period/value:
+      plugin: notice_period_string_to_number
+      source: 'Notice Period'
+    field_notes/value:
+      plugin: other_referral_values
+      source:
+        - 'Notes'
+        - 'Email Referral'
+    # field_referred_by:
+    uid: 1
+    type:
+      plugin: default_value
+      default_value: referrals
