@@ -1,0 +1,46 @@
+uuid: 3ea9d730-9338-40df-bcaf-ea0168116d19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.candidate_skills.field_sub_type
+    - taxonomy.vocabulary.candidate_skills
+  module:
+    - path
+    - text
+id: taxonomy_term.candidate_skills.default
+targetEntityType: taxonomy_term
+bundle: candidate_skills
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_sub_type:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

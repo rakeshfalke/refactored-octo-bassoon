@@ -39,14 +39,20 @@ content:
     weight: 100
     region: content
 hidden:
+  field_active_referral: true
   field_assigned_to: true
   field_candidate_cell: true
   field_candidate_cell_alternate: true
   field_candidate_email: true
   field_candidate_experience: true
   field_candidate_location: true
+  field_candidate_primary_skills: true
   field_candidate_resume: true
+  field_candidate_secondary_skills: true
   field_candidate_skype: true
   field_candidate_status: true
   field_isactive: true
+  field_linkedin_profile: true
+  field_notes: true
+  field_notice_period: true
   field_referred_by: true

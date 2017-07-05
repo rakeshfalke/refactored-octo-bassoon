@@ -47,3 +47,4 @@ hidden:
   field_jp_location: true
   field_jp_must_have_skills: true
   field_jp_special_notes: true
+  field_keywords: true
