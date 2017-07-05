@@ -29,4 +29,5 @@ class StrToTimestamp extends ProcessPluginBase {
       throw new MigrateSkipRowException($message);
     }
     return strtotime($value);
+  }
 }
