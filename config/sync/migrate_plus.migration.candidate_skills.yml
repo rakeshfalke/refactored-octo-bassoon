@@ -20,16 +20,16 @@ source:
     - id
   fields:
     id: 'Unique Id'
-    skills: Skills
+    'Referral Skill': 'Referral Skill'
 process:
   name:
     plugin: candidate_referral_skills
     delimiter: '|'
-    source: Skills
+    source: 'Referral Skill'
   field_sub_type:
     plugin: candidate_referral_sub_type
     delimiter: '|'
-    source: Skills
+    source: 'Referral Skill'
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: candidate_skills
