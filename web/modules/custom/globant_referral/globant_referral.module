@@ -59,7 +59,7 @@ function globant_referral_node_insert(NodeInterface $node) {
     $node->setNewRevision(FALSE);
     $node->save();
   }
-  if ($node->getType() === 'referrals') {
+  if ($node->getType() === 'referrals' && PHP_SAPI != 'cli') {
     $candidate_email = $node->get('field_candidate_email')->getValue();
     $tempstore = \Drupal::service('user.private_tempstore')->get('globant_referral');
     $active_referral = $tempstore->get($candidate_email[0]['value']);
