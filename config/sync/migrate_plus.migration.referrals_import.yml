@@ -19,7 +19,7 @@ source:
     - id
   fields:
     'id': 'Unique id'
-    'Timestamp': 'Created date'
+    Timestamp: 'Created date'
     'Email Address': 'Referred by'
     'Referral Name': 'Candidate Name'
     'Referral Location': 'Candidate Location'
@@ -39,7 +39,9 @@ process:
     default_value: referrals
   title: 'Referral Name'
   field_candidate_cell: 'Referral Contact'
-  field_candidate_email: 'Referral Email'
+  field_candidate_email/value:
+    plugin: duplicate_email
+    source: 'Referral Email'
   field_candidate_experience: 'Referral Experience'
   field_candidate_location: 'Referral Location'
   field_candidate_primary_skills/target_id:
@@ -62,7 +64,9 @@ process:
       - 'Email Address'
       - 'Referral Resume'
       - 'Recruiter'
-  uid: '1'
+  uid:
+    plugin: default_value
+    default_value: 1
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
