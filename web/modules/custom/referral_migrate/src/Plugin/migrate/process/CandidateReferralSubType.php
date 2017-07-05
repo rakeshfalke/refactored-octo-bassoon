@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\referral_migrate\Plugin\migrate\process\CandidateReferralSkills
+ * Contains \Drupal\referral_migrate\Plugin\migrate\process\CandidateReferralSubType
  */
 
 namespace Drupal\referral_migrate\Plugin\migrate\process;
@@ -14,10 +14,10 @@ use Drupal\migrate\MigrateSkipRowException;
 /**
  *
  * @MigrateProcessPlugin(
- *   id = "candidate_referral_skills",
+ *   id = "candidate_referral_sub_type",
  * )
  */
-class CandidateReferralSkills extends ProcessPluginBase {
+class CandidateReferralSubType extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
@@ -28,23 +28,13 @@ class CandidateReferralSkills extends ProcessPluginBase {
     if(empty($value)) {
       throw new MigrateSkipRowException($message);
     }
-
-    $terms = \Drupal::service('globant_referral.services')->getVocabularyTerms('candidate_skills');
-    $temp = [];
-    foreach ($terms as $term) {
-      $temp[] = strtolower($term->getName());
-    }
+    // return sub type or sub skill
     $skills = explode('|', $value);
-    if(empty($skills[1])) {
-      $message = t('Value not exist');
+    if(empty($skills[0])) {
       throw new MigrateSkipRowException($message);
     }
 
-    $skill = strtolower($skills[1]);
-    if (!in_array($skill, $temp)) {
-      return $skill;
-    }
-    $message = t('Duplicated Term');
-    throw new MigrateSkipRowException($message);
+    $skill = strtolower($skills[0]);
+    return $skill;
   }
 }

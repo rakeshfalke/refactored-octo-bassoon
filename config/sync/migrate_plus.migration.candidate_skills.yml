@@ -1,4 +1,4 @@
-uuid: 04357b91-79ac-4699-a447-551f17900b2c
+uuid: 00520652-a672-432e-9f12-475d8dd487e1
 langcode: en
 status: true
 dependencies: {  }
@@ -24,6 +24,10 @@ source:
 process:
   name:
     plugin: candidate_referral_skills
+    delimiter: '|'
+    source: Skills
+  field_sub_type:
+    plugin: candidate_referral_sub_type
     delimiter: '|'
     source: Skills
 destination:

@@ -1,4 +1,4 @@
-uuid: 8ca9a178-602f-4669-b5ef-d51110e06433
+uuid: 2b85cba8-2afb-4581-87d8-0abb90543cfd
 langcode: en
 status: true
 dependencies: {  }
@@ -16,39 +16,49 @@ source:
   enclosure: '"'
   header_row_count: 1
   keys:
-    - id
+    - Id
   fields:
-    skills: Skills
-    created: Timestamp
-    body: 'Email Address'
-    name: 'Referrals Name'
-    location: 'Referral Location'
-    skils: Skills
-    experience: 'Referral Experience'
-    cell: 'Referral Contact'
-    notice: 'Notice Period'
-    notes: Notes
-    remail: 'Email Referral'
+    Id: 'Unique id'
+    Timestamp: 'Created date'
+    'Email Address': 'Referred by'
+    'Referral Name': 'Candidate Name'
+    'Referral Location': 'Candidate Location'
+    'Referral Skill': 'Candidate Skill'
+    'Referral Resume': 'Candidate Resume'
+    'Referral Experience': 'Candidate Experience'
+    'Referral Email': 'Candidate Email'
+    'Referral Contact': 'Candidate Contact'
+    'Notice Period': 'Candidate Notice Period'
+    'Referral Profile': 'Candidate Profile'
+    'Referral Good Fit': 'Candidate Good Fit'
+    Recruiter: 'Candidate Assigned To Recruiter'
+    Status: 'Candidate status'
 process:
-  title: 'Referrals Name'
+  title: 'Referral Name'
   field_candidate_cell: 'Referral Contact'
-  field_candidate_email: 'Email Address'
+  field_candidate_email: 'Referral Email'
   field_candidate_experience: 'Referral Experience'
   field_candidate_location: 'Referral Location'
   field_candidate_primary_skills/target_id:
     plugin: name_to_skill_id
     source: Skills
-  field_candidate_secondary_skills/target_id:
-    plugin: name_to_skill_id
-    source: Skills
+  field_candidate_status/target_id:
+    plugin: candidate_status
+    source: Status
+  field_linkedin_profile: 'Referral Profile'
   field_notice_period/value:
     plugin: notice_period_string_to_number
     source: 'Notice Period'
+  created:
+    plugin: str_to_timestamp
+    source: Timestamp
   field_notes/value:
     plugin: other_referral_values
     source:
-      - Notes
-      - 'Email Referral'
+      - 'Referral Good Fit'
+      - 'Email Address'
+      - 'Referral Resume'
+      - Recruiter
   uid: 1
   type:
     plugin: default_value
