@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.job_post.body
+    - field.field.node.job_post.field_job_post_owner
     - field.field.node.job_post.field_jp_experience_max
     - field.field.node.job_post.field_jp_experience_min
     - field.field.node.job_post.field_jp_expires_on
@@ -41,6 +42,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_job_post_owner:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_jp_experience_max:
     weight: 3
     settings:

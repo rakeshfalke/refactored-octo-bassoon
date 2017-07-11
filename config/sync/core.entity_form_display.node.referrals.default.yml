@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.referrals.field_linkedin_profile
     - field.field.node.referrals.field_notes
     - field.field.node.referrals.field_notice_period
+    - field.field.node.referrals.field_refer_job_id
     - field.field.node.referrals.field_referred_by
     - node.type.referrals
   module:
@@ -153,6 +154,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_refer_job_id:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_referred_by:
     weight: 11

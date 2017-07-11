@@ -16,3 +16,5 @@ permissions:
   - 'administer globantuser'
   - 'administer permissions'
   - 'administer users'
+  - 'delete any referrals content'
+  - 'delete own referrals content'

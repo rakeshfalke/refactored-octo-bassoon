@@ -10,7 +10,6 @@ weight: 8
 is_admin: null
 permissions:
   - 'access content overview'
-  - 'delete any job_post content'
   - 'edit any job_post content'
   - 'use draft_draft transition'
   - 'use draft_published transition'

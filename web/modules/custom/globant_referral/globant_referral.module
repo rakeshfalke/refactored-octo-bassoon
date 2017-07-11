@@ -173,10 +173,17 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
       $form['field_referred_by']['#access'] = FALSE;
       $form['field_assigned_to']['#access'] = FALSE;
       $form['field_candidate_email']['#disabled'] = TRUE;
+      $form['field_refer_job_id']['#access'] = FALSE;
+      $form['field_refer_job_id']['#disabled'] = TRUE;
       if ($form_id == 'node_referrals_form') {
         $user_id = \Drupal::currentUser()->id();
         $form['field_referred_by']['widget']['#default_value'] = $user_id;
         $form['field_candidate_email']['#disabled'] = FALSE;
+        $param = \Drupal::request()->query->all();
+        if (isset($param['jobid'])) {
+          $form['field_refer_job_id']['widget']['#default_value'] =
+          $param['jobid'];
+        }
       }
       $roles = ['recruiter_admin', 'recruiter', 'administrator'];
 
@@ -187,12 +194,11 @@ function globant_referral_form_alter(&$form, FormStateInterface $form_state, $fo
         $form['field_assigned_to']['#access'] = TRUE;
         $form['field_referred_by']['#access'] = TRUE;
         $form['field_referred_by']['#disabled'] = TRUE;
-        /* disable also for admin
+        // disable also for admin
         if (in_array('recruiter_admin', $user_roles)) {
           $form['field_referred_by']['#disabled'] = FALSE;
           $form['field_candidate_email']['#disabled'] = FALSE;
         }
-        */
       }
       $form['#validate'][] = 'globant_referral_referrals_validate';
     break;

@@ -18,7 +18,7 @@ source:
   keys:
     - id
   fields:
-    'id': 'Unique id'
+    id: 'Unique id'
     Timestamp: 'Created date'
     'Email Address': 'Referred by'
     'Referral Name': 'Candidate Name'
@@ -31,8 +31,8 @@ source:
     'Notice Period': 'Candidate Notice Period'
     'Referral Profile': 'Candidate Profile'
     'Referral Good Fit': 'Candidate Good Fit'
-    'Recruiter': 'Candidate Assigned To Recruiter'
-    'Status': 'Candidate status'
+    Recruiter: 'Candidate Assigned To Recruiter'
+    Status: 'Candidate status'
 process:
   type:
     plugin: default_value
@@ -63,7 +63,7 @@ process:
       - 'Referral Good Fit'
       - 'Email Address'
       - 'Referral Resume'
-      - 'Recruiter'
+      - Recruiter
   uid:
     plugin: default_value
     default_value: 1

@@ -1,0 +1,29 @@
+uuid: 7fefe00b-2d9a-4547-a43c-4be08948eb17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_refer_job_id
+    - node.type.job_post
+    - node.type.referrals
+id: node.referrals.field_refer_job_id
+field_name: field_refer_job_id
+entity_type: node
+bundle: referrals
+label: 'Refer job id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      job_post: job_post
+    sort:
+      field: field_jp_job_id
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
